@@ -1,5 +1,7 @@
-from profesor import profesor as prof
-from clase import curso as cur
+import sys
+sys.path.append("Clases")
+from Clases.profesor import profesor as prof
+from Clases.clase import curso as cur
 import pandas as pd 
 
 def ingresar_profesores_desde_archivo(archivo_profesores):
@@ -20,10 +22,10 @@ def mostrar_profesores(profesores):
         print(profesor.mostrar_profesor())
     print("Numero total de profesores: " + str(len(profesores)))
 class main:
-    archivo_profesores = pd.read_csv("Clases/profesores.csv")
-    archivo_clases = pd.read_csv("Clases/clases.csv")
+    archivo_profesores = pd.read_csv("Archivos de entrada/profesores.csv")
+    archivo_clases = pd.read_csv("Archivos de entrada/clases.csv")
     profesores = ingresar_profesores_desde_archivo(archivo_profesores)
     clases = ingresar_cursos_desde_archivo(archivo_clases)
 
-    #mostrar_profesores(profesores)
+    mostrar_profesores(profesores)
     mostrar_cursos(clases)
