@@ -34,10 +34,8 @@ class profesor:
     def agregarCurso(self, curso):
         self._cursosAsignados.append(curso)
         self._num_clases += 1
-    def mostrar(self):
-        return "Nombre: "+self._nombre  + "\nDisponibilad: \n"+self.mostrarDisponibilidad() + "Areas: \n" + self.mostrarAreas() + "Numero de clases asignadas: \n" + str(self._num_clases) + "\nCursos Asignados: \n" + self.mostrarCursos()
     def mostrarCursos(self):
-        cursos = ""
+        cursos = []
         if len(self._cursosAsignados) == 0:
             return "No tiene cursos asignados"
         for curso in self._cursosAsignados:
@@ -57,3 +55,5 @@ class profesor:
                 if self._disponibilidad[dias.index(dia)*4+horas.index(hora)] == "1":
                     disponibilidad+=dia + " " + hora + " \n"
         return disponibilidad
+    def mostrar_profesor(self):
+        return "Profesor :"+self._nombre + "\n --------------\n Disponibilidad:\n" + self.mostrarDisponibilidad() + "----------------\nAreas de enseñanza:  " +self.mostrarAreas()+  "Numero de clases asignadas:  " + str(self._num_clases) + "\nCursos asignados al profesor:  " + str(self.mostrarCursos()) + "\n"

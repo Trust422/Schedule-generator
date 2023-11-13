@@ -1,12 +1,29 @@
 from profesor import profesor as prof
 from clase import curso as cur
+import pandas as pd 
 
-class main:
+def ingresar_profesores_desde_archivo(archivo_profesores):
     profesores=[]
-    matematicas= cur("IL365", "Matematicas de la ingenieria")
-    profesores.append(prof ("Martin Linar", "00001111000011110000", ["Matematica", "Fisica"]))
-    profesores.append(prof ("Juan Perez", "11110000000000001111", ["Matematica", "Fisica"]))
-    profesores[0].agregarCurso("IL365")
-    profesores[0].agregarCurso("IL440")
-    matematicas.setProfesor(profesores[0])
-    print (matematicas.mostrarCurso())
+    for i in range(len(archivo_profesores)):
+        profesores.append(prof(archivo_profesores.iloc[i,0], str(archivo_profesores.iloc[i,1]), [archivo_profesores.iloc[i,2]]))
+    return profesores
+def ingresar_cursos_desde_archivo(archivo_cursos):
+    cursos=[]
+    for i in range(len(archivo_cursos)):
+        cursos.append(cur(archivo_cursos.iloc[i,0], archivo_cursos.iloc[i,1], archivo_cursos.iloc[i,2], archivo_cursos.iloc[i,3]))
+    return cursos
+def mostrar_cursos(cursos):
+    for curso in cursos:
+        print(curso.mostrarCurso())
+def mostrar_profesores(profesores):
+    for profesor in profesores:
+        print(profesor.mostrar_profesor())
+    print("Numero total de profesores: " + str(len(profesores)))
+class main:
+    archivo_profesores = pd.read_csv("Clases/profesores.csv")
+    archivo_clases = pd.read_csv("Clases/clases.csv")
+    profesores = ingresar_profesores_desde_archivo(archivo_profesores)
+    clases = ingresar_cursos_desde_archivo(archivo_clases)
+
+    #mostrar_profesores(profesores)
+    mostrar_cursos(clases)

@@ -1,42 +1,26 @@
 max_alumnos = 40
 class curso:
-    def __init__(self, nombre, area):
+    def __init__(self, nombre, departamento, academia, clave ):
         self._nombre = nombre
-        self._area = area
-        self._profesor = None
-        self._horario = ""
-        self._ID = ""
-        self._salon = ""
-        self._importancia = 0
+        self._departamento = departamento
+        self._academia = academia
+        self._clave = clave
     #setters
     def setNombre(self, nombre):
         self._nombre = nombre
-    def setArea(self, area):
-        self._area = area
-    def setProfesor(self, profesor):
-        self._profesor = profesor
-    def setHorario(self, horario):
-        self._horario = horario
-    def setID(self, ID):
-        self._ID = ID
-    def setSalon(self, salon):
-        self._salon = salon
-    def setImportancia(self, importancia):
-        self._importancia = importancia
+    def setDepartamento(self, departamento):
+        self._departamento = departamento
+    def setAcademia(self, academia):
+        self._academia = academia
+    def setClave(self, clave):
+        self._clave = clave
     #getters
     def getNombre(self):
         return self._nombre
-    def getArea(self):
-        return self._area
-    def getProfesor(self):
-        return self._profesor
-    def getHorario(self):
-        return self._horario
-    def getID(self):
-        return self._ID
-    def getSalon(self):
-        return self._salon
-    def getImportancia(self):
-        return self._importancia
+    def getDepartamento(self):
+        return self._departamento
+    def getClave(self):
+        return self._clave
     #metodos
-    
+    def mostrarCurso(self):
+        return "Nombre: " + self._nombre + "\nDepartamento: " + self._departamento + "\nAcademia: " + self._academia + "\nClave: " + self._clave + "\n"
