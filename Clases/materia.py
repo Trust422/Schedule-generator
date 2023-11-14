@@ -1,5 +1,4 @@
-max_alumnos = 40
-class curso:
+class materia:
     def __init__(self, nombre, departamento, academia, clave ):
         self._nombre = nombre
         self._departamento = departamento
@@ -22,5 +21,5 @@ class curso:
     def getClave(self):
         return self._clave
     #metodos
-    def mostrarCurso(self):
+    def mostrarMateria(self):
         return "Nombre: " + self._nombre + "\nDepartamento: " + self._departamento + "\nAcademia: " + self._academia + "\nClave: " + self._clave + "\n"

@@ -1,7 +1,7 @@
 import sys
 sys.path.append("Clases")
 from Clases.profesor import profesor as prof
-from Clases.clase import curso as cur
+from Clases.materia import materia as mat
 import pandas as pd 
 
 def ingresar_profesores_desde_archivo(archivo_profesores):
@@ -12,7 +12,7 @@ def ingresar_profesores_desde_archivo(archivo_profesores):
 def ingresar_cursos_desde_archivo(archivo_cursos):
     cursos=[]
     for i in range(len(archivo_cursos)):
-        cursos.append(cur(archivo_cursos.iloc[i,0], archivo_cursos.iloc[i,1], archivo_cursos.iloc[i,2], archivo_cursos.iloc[i,3]))
+        cursos.append(mat(archivo_cursos.iloc[i,0], archivo_cursos.iloc[i,1], archivo_cursos.iloc[i,2], archivo_cursos.iloc[i,3]))
     return cursos
 def mostrar_cursos(cursos):
     for curso in cursos:
