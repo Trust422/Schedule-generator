@@ -1,4 +1,4 @@
-class materia:
+class Materia:
     def __init__(self, nombre, departamento, academia, clave ):
         self._nombre = nombre
         self._departamento = departamento

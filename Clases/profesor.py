@@ -1,4 +1,4 @@
-class profesor:
+class Profesor:
     def __init__(self, nombre, disponibilidad, areas):
         self._nombre = nombre
         self._disponibilidad = disponibilidad
