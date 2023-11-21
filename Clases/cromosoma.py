@@ -20,7 +20,9 @@ class Cromosoma:
     def __str__(self):
         # Método para imprimir el cromosoma de manera legible
         return str(self.asignaciones)
-    
+    def getKeys(self):
+        return list(((self.asignaciones.keys())))
+
     def mostrar(self):
         # Método para mostrar cada asignación en una línea separada
         for (materia, turno), info in self.asignaciones.items():
