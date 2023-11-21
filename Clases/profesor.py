@@ -1,12 +1,9 @@
 class Profesor:
-    def __init__(self, nombre, disponibilidad, areas):
+    def __init__(self, id, nombre):
         self._nombre = nombre
-        self._disponibilidad = disponibilidad
-        self._areas = areas
-        self._num_clases=0
-        self._cursosAsignados = []
-    
-    #setters
+        self._id = id
+        
+    '''#setters
     def setNombre(self, nombre):
         self._nombre = nombre
     def setDisponibilidad(self, disponibilidad):
@@ -16,19 +13,16 @@ class Profesor:
     def setNumClases(self, num_clases):
         self._num_clases = num_clases
     def setCursosAsignados(self, cursosAsignados):
-        self._cursosAsignados = cursosAsignados
+        self._cursosAsignados = cursosAsignados'''
+    
     #getters
-    def getNombre(self):
-        return self._nombre
-    def getDisponibilidad(self):
-        return self._disponibilidad
-    def getAreas(self):
-        return self._areas
-    def getNumClases(self):
-        return self._num_clases
-    def getCursosAsignados(self):
-        return self._cursosAsignados
-    #metodos
+    def get_id(self): return self._id
+
+    def get_nombre(self): return self._nombre
+
+    def __str__(self): return self._nombre
+
+    '''#metodos
     def agregarArea(self, area):
         self._areas.append(area)
     def agregarCurso(self, curso):
@@ -54,6 +48,6 @@ class Profesor:
             for hora in horas:
                 if self._disponibilidad[dias.index(dia)*4+horas.index(hora)] == "1":
                     disponibilidad+=dia + " " + hora + " \n"
-        return disponibilidad
-    def mostrar_profesor(self):
-        return "Profesor :"+self._nombre + "\n --------------\n Disponibilidad:\n" + self.mostrarDisponibilidad() + "----------------\nAreas de enseñanza:  " +self.mostrarAreas()+  "Numero de clases asignadas:  " + str(self._num_clases) + "\nCursos asignados al profesor:  " + str(self.mostrarCursos()) + "\n"
+        return disponibilidad'''
+    
+    
