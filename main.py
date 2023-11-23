@@ -1,4 +1,34 @@
-import sys
+from Clases.algoritmo_genetico import Algoritmo
+from Clases.poblacion import Poblacion
+from Clases.data import Data
+
+
+if __name__ == '__main__':
+    data = Data()
+    n_generacion = 1
+    print(f'\n GENERACION #{n_generacion}')
+    poblacion = Poblacion(data.TAMANIO_POBLACION, data)
+    poblacion.get_ofertas().sort(key=lambda x: x.get_fitness(), reverse=True)
+    for oferta in poblacion.get_ofertas():
+        print(f'**OFERTA**\n{oferta}\n\n')
+
+    genetico = Algoritmo()
+
+    while (poblacion.get_ofertas()[0].get_fitness() != 1.0):
+        n_generacion += 1
+        print('---------------------------------------------------------------------------------')
+        print(f'\n GENERACION #{n_generacion}')
+        poblacion = genetico.evolucionar(poblacion)
+        poblacion.get_ofertas().sort(key=lambda x: x.get_fitness(), reverse=True)
+        for oferta in poblacion.get_ofertas():
+            print(f'**OFERTA** \n{oferta}\n\n')
+    
+    print('\n\n')
+
+
+
+
+'''import sys
 sys.path.append("Clases")
 from Clases.profesor import Profesor as prof
 from Clases.materia import Materia as mat
@@ -41,4 +71,4 @@ class main:
     oferta_academica.asignar_clase(2, 4, 3, curso)
     print(oferta_academica.mostrar_horario_clases())
     #mostrar_profesores(profesores)
-    #mostrar_cursos(clases)
+    #mostrar_cursos(clases)'''

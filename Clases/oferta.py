@@ -1,5 +1,5 @@
-from data import Data
-from clase import Clase
+from Clases.data import Data
+from Clases.clase import Clase
 
 import random as rnd
 
@@ -48,15 +48,15 @@ class Oferta:
             for j in range(0, len(clases)):
                 if j >= i:
                     if (clases[i].get_tiempo() == clases[j].get_tiempo()) and (clases[i].get_id() != clases[j].get_id()):
-                        if clases[i].get_salon() == clases[j].get_salon(): self._n_conflictos += 1
-                        if clases[i].get_profesor() == clases[j].get_profesor(): self._n_conflictos += 1
-        
-        print(self._n_conflictos)
-        
+                        if clases[i].get_salon() == clases[j].get_salon(): 
+                            self._n_conflictos += 1
+                        if clases[i].get_profesor() == clases[j].get_profesor(): 
+                            self._n_conflictos += 1
+                
         return 1 / ((1.0 * self._n_conflictos + 1))
     
     def __str__(self):
-        mi_str = ''
+        mi_str = f'# CONFLICTOS -> {self._n_conflictos} \n '
         for i in range(0, len(self._clases)-1):
             mi_str += str(self._clases[i]) + ", \n"
         mi_str += str(self._clases[len(self._clases)-1])

@@ -1,5 +1,5 @@
-from data import Data
-from oferta import Oferta
+from Clases.data import Data
+from Clases.oferta import Oferta
 class Poblacion:
     def __init__(self, tamanio, data:Data):
         self._tamanio = tamanio
@@ -13,7 +13,7 @@ class Poblacion:
 if __name__ == '__main__':
 
     nueva_data = Data()
-    nueva_poblacion = Poblacion(5, nueva_data)
+    nueva_poblacion = Poblacion(10, nueva_data)
 
     i=0
     for oferta in nueva_poblacion.get_ofertas():
