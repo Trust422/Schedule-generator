@@ -113,7 +113,7 @@ class Ventana_Principal:
             self.frame_cargar_datos,
             text="Generar",
             font=("Calibri",10),
-            state="disabled",
+            #state="disabled",
             state="normal",
             command=self.generar
         )
