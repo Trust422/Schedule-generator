@@ -67,70 +67,45 @@ def cursos_disponibles_posibles(profesores: prof, materias: mat):
 #implementación del Algortimo Genetico
 def inicializacion_AG(cursos_dispo, num_cromosomas):
     cromosomas=[]
+    for i in range(num_cromosomas): #creacion de los cromosomas iniciales
+            cromosoma_nuevo=cr(cursos_dispo, salones, turnos)
+            cromosomas.append(cromosoma_nuevo)
+    fitness_cromo=calcula_fitness_cromosomas(cromosomas)
+    return fitness_cromo
+
+def calcula_fitness_cromosomas(cromosomas):
     fitness_cromo={}
-    for i in range(num_cromosomas):
-        cromosoma_nuevo=cr(cursos_dispo, salones, turnos)
-        cromosomas.append(cromosoma_nuevo)
-        fitness_cromo[cromosoma_nuevo]=fitness(cromosoma_nuevo)
-    sorted_fitness = dict(sorted(fitness_cromo.items(), key=lambda item: item[1]))
-    #print(sorted_fitness)
-    print(list(sorted_fitness.keys())[0].mostrar())
-    print(fitness_cromo[(list(sorted_fitness.keys()))[0]])
+    for i in range(len(cromosomas)):
+        fitness_cromo[cromosomas[i]]=cromosomas[i].fitness()
+    fitness_cromo = dict(sorted(fitness_cromo.items(), key=lambda item: item[1])) #ordenamiento del diccionario de fitness de menor a mayor
+    return fitness_cromo
 
-def fitness(solucion):
-    def contar_choques_prof(solucion):
-        choques_profesor = {}
-        choques=0
-
-        for asignacion, detalles in solucion.asignaciones.items():
-            profesor = detalles['profesor']
-            turno = asignacion[1]
-
-            if turno not in choques_profesor:
-                choques_profesor[turno] = {}
-
-            if profesor in choques_profesor[turno]:
-                choques_profesor[turno][profesor] += 1
-                choques+=1
-            else:
-                choques_profesor[turno][profesor] = 1
-        return choques
-    def imprimir_choques(choques_profesor):
-        for turno, profesores_en_turno in choques_profesor.items():
-            print(f"\nTurno: {turno}")
-            for profesor, cantidad_choques in profesores_en_turno.items():
-                if cantidad_choques > 1:
-                    print(f"Profesor: {profesor.getNombre()} - Choques: {cantidad_choques}")
-    def contar_choques_salon(solucion):
-        choques_salon={}
-        choques=0
-        for asignacion, detalles in solucion.asignaciones.items():
-            salon = detalles['salon']
-            turno = asignacion[1]
-
-            if turno not in choques_salon:
-                choques_salon[turno] = {}
-
-            if salon in choques_salon[turno]:
-                choques_salon[turno][salon] += 1
-                choques+=1
-            else:
-                choques_salon[turno][salon] = 1
-        return choques
-    choques_prof=contar_choques_prof(solucion)
-    choques_sal=contar_choques_salon(solucion)
-    #print(choques_prof, choques_sal)
-    return(choques_prof*250 + choques_sal*50)
-
-
+def seleccionar_mejores(diccionario, n):
+    sorted_diccionario = dict(sorted(diccionario.items(), key=lambda item: item[1], reverse=True))
+    mitad_superior = dict(list(sorted_diccionario.items())[n:])
+    return mitad_superior
+def crossover(padres):
+    hijos=[]
+    for i in range(len(padres)-1):
+        hijos.append(padres[i].crossover(padres[i+1]))
+    hijos.append(padres[0].crossover(padres[len(padres)-1]))
+    print(len(hijos), len(padres))
+    return hijos
+    
 
 class main:    
     profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv"))
     materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv"))
     oferta_academica=of()
-    inicializacion_AG(cursos_disponibles_posibles(profesores, materias), 1000)
-    
-    
-
-
+    poblacion=100
+    generaciones=100
+    generacion_inicial=inicializacion_AG(cursos_disponibles_posibles(profesores, materias), poblacion)
+    for i in range(generaciones):
+        padres=seleccionar_mejores(generacion_inicial, int(poblacion/2))
+        descendencia=list(padres.keys())+crossover(list(padres.keys()))
+        print(f"mejor fitness de la generacion:{i} "+str(list(padres.values())[0]))
+        descendencia_fitness=calcula_fitness_cromosomas(descendencia)
+        generacion_inicial=descendencia_fitness
+    print ("mejor horario: ")
+    list(padres.keys())[0].mostrar()
     
