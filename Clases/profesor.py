@@ -1,4 +1,4 @@
-class profesor:
+class Profesor:
     def __init__(self, nombre, disponibilidad, areas):
         self._nombre = nombre
         self._disponibilidad = disponibilidad
@@ -22,7 +22,7 @@ class profesor:
         return self._nombre
     def getDisponibilidad(self):
         return self._disponibilidad
-    def getAreas(self):
+    def getArea(self):
         return self._areas
     def getNumClases(self):
         return self._num_clases
@@ -57,3 +57,9 @@ class profesor:
         return disponibilidad
     def mostrar_profesor(self):
         return "Profesor :"+self._nombre + "\n --------------\n Disponibilidad:\n" + self.mostrarDisponibilidad() + "----------------\nAreas de enseñanza:  " +self.mostrarAreas()+  "Numero de clases asignadas:  " + str(self._num_clases) + "\nCursos asignados al profesor:  " + str(self.mostrarCursos()) + "\n"
+    def perteneceArea(self, area):
+        if self._area==area:
+            return 1
+        else:
+            return -1
+

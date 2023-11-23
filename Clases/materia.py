@@ -1,4 +1,4 @@
-class materia:
+class Materia:
     def __init__(self, nombre, departamento, academia, clave ):
         self._nombre = nombre
         self._departamento = departamento
@@ -20,6 +20,8 @@ class materia:
         return self._departamento
     def getClave(self):
         return self._clave
+    def getAcademia(self):
+        return self._academia
     #metodos
     def mostrarMateria(self):
         return "Nombre: " + self._nombre + "\nDepartamento: " + self._departamento + "\nAcademia: " + self._academia + "\nClave: " + self._clave + "\n"
