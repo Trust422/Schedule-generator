@@ -7,7 +7,7 @@ class Oferta:
     def __init__(self, data:Data):
         self._data = data
         self._clases = []
-        self._n_conflictos = 0
+        self._n_conflictos = None
         self._fitness = -1
         self._n_clase = 0
         self._cambio_fitness = True
@@ -40,23 +40,23 @@ class Oferta:
         return self._fitness
 
     def calcular_fitness(self):
-        self._n_conflictos = 0
+        self._n_conflictos = 0 
         clases = self.get_clases()
         for i in range(0, len(clases)):
             if (clases[i].get_salon().get_capacidad() < clases[i].get_curso().get_max_n_alumnos()):
                 self._n_conflictos += 1
             for j in range(0, len(clases)):
                 if j >= i:
-                    if (clases[i].get_tiempo() == clases[j].get_tiempo()) and (clases[i].get_id() != clases[j].get_id()):
-                        if clases[i].get_salon() == clases[j].get_salon(): 
+                    if (clases[i].get_tiempo().get_id() == clases[j].get_tiempo().get_id()) and (clases[i].get_id() != clases[j].get_id()):
+                        if clases[i].get_salon().get_numero() == clases[j].get_salon().get_numero(): 
                             self._n_conflictos += 1
-                        if clases[i].get_profesor() == clases[j].get_profesor(): 
+                        if clases[i].get_profesor().get_id() == clases[j].get_profesor().get_id(): 
                             self._n_conflictos += 1
                 
         return 1 / ((1.0 * self._n_conflictos + 1))
     
     def __str__(self):
-        mi_str = f'# CONFLICTOS -> {self._n_conflictos} \n '
+        mi_str = f'# CONFLICTOS -> {self._n_conflictos} \n FITNESS -> {self._fitness} \n'
         for i in range(0, len(self._clases)-1):
             mi_str += str(self._clases[i]) + ", \n"
         mi_str += str(self._clases[len(self._clases)-1])

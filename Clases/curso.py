@@ -14,4 +14,4 @@ class Curso:
     def get_max_n_alumnos(self): return self._max_n_alumnos
     
     #toString
-    def __str__(self): return self._materia
+    def __str__(self): return f'ID: {self._numero} MATERIA: {self._nombre}'

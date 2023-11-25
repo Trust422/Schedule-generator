@@ -15,6 +15,9 @@ if __name__ == '__main__':
     genetico = Algoritmo()
 
     while (poblacion.get_ofertas()[0].get_fitness() != 1.0):
+        if (n_generacion == 1500):
+            print('\n\n****SOLUCION NO ENCONTRADA****\n\n')
+            break
         n_generacion += 1
         print('---------------------------------------------------------------------------------')
         print(f'\n GENERACION #{n_generacion}')

@@ -28,5 +28,5 @@ class Clase:
     def set_salon(self, s): self._salon = s
 
     def __str__(self):
-        return f'{self._departamento.get_nombre()}, {self._curso.get_numero()}, {self._salon.get_numero()}, {self._profesor.get_nombre()}, {self._tiempo.get_tiempo()}'
+        return f'{self._id}, {self._departamento.get_nombre()}, {self._curso.get_numero()}, {self._salon.get_numero()}, {self._profesor.get_nombre()}, {self._tiempo.get_tiempo()}'
         
