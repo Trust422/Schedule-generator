@@ -1,20 +1,60 @@
-Fundamentos de programacion,Ciencias computacionales,Programacion,I5288
-L贸gica matem谩tica,Ciencias computacionales,Matematicas,I5247
-Prec谩lculo,Ciencias computacionales,Matematicas,IG738
-Fundamentos de f铆sica,Ciencias computacionales,Fisica,IL340
-Introducci贸n a la ingenier铆a,Ciencias computacionales,Admisntrativa,IL342
-Programaci贸n estructurada,Ciencias computacionales,Programacion,IL352
-Matematicas discretas,Ciencias computacionales,Matematicas,IL345
-Calculo diferencial e integral,Ciencias computacionales,Matematicas,IL344
-mecanica,Ciencias computacionales,Fisica,IL343
-Administracion de proyectos tecnologicos,Ciencias computacionales,Admisntrativa,IL353
-Programaci贸n orientada a objetos,Ciencias computacionales,Programaci贸n,I5289
-Algebra lineal,Ciencias computacionales,Matematicas,IB056
-Ecuaciones diferenciales,Ciencias computacionales,Matematicas,IL347
-Circuitos Electronicos y electromagnetismo,Ciencias computacionales,Fisica,IL346
-Sistemas dgitales,Ciencias computacionales,Arquitectura de computadoras,IL363
-Estructura de datos,Ciencias computacionales,Programacion,IL354
-Probabilidad y estadistica,Ciencias computacionales,Matematicas,IB067
-Metodos num茅ricos,Ciencias computacionales,Matematicas,IL348
+Fundamentos de programaci髇,Ciencias computacionales,Programaci髇,I5288
+L骻ica m醫ematica,Ciencias computacionales,Matem醫icas,I5247
+Prec醠culo,Ciencias computacionales,Matem醫icas,IG738
+Fundamentos de f韘ica,Ciencias computacionales,F韘ica,IL340
+Introducci髇 a la ingenier韆,Ciencias computacionales,Administrativa,IL342
+Programaci髇 estructurada,Ciencias computacionales,Programaci髇,IL352
+Matem醫icas discretas,Ciencias computacionales,Matem醫icas,IL345
+Calculo diferencial e integral,Ciencias computacionales,Matem醫icas,IL344
+mec醤ica,Ciencias computacionales,F韘ica,IL343
+Administraci髇n de proyectos tecnol骻icos,Ciencias computacionales,Administrativa,IL353
+Programaci髇 orientada a objetos,Ciencias computacionales,Programaci髇,I5289
+Algebra lineal,Ciencias computacionales,Matem醫icas,IB056
+Ecuaciones diferenciales,Ciencias computacionales,Matem醫icas,IL347
+Circuitos Electr髇icos y electromagnetismo,Ciencias computacionales,F韘ica,IL346
+Sistemas digitales,Ciencias computacionales,Arquitectura de computadoras,IL363
+Estructura de datos,Ciencias computacionales,Estructura de datos,IL354
+Probabilidad y estad韘tica,Ciencias computacionales,Matem醫icas,IB067
+M閠odos num閞icos,Ciencias computacionales,Matem醫icas,IL348
 Arquitectura de computadoras,Ciencias computacionales,Arquitectura de computadoras,IL365
-Programacion para internet,Ciencias computacionales,Programacion,IL362
+Programaci髇 para internet,Ciencias computacionales,Programaci髇,IL362
+Liderazgo y emprendimiento,Ciencias computacionales,Administrativa,IL350
+An醠isis de algoritmos,Ciencias computacionales,Programaci髇,IL355
+Bases de datos,Ciencias computacionales,Programaci髇,IL356
+Redes de computadoras,Ciencias computacionales,Programaci髇,IL364
+Fundamentos de IA,Ciencias computacionales,Programaci髇,IL361
+Sistemas operativos,Ciencias computacionales,Programaci髇,IL366
+Innovaci髇 y tecnolog韆,Ciencias computacionales,Administrativa,IL351
+Interacci髇 Humano Computadora,Ciencias computacionales,Programaci髇,IL367
+Ingenier韆 de Software,Ciencias computacionales,Programaci髇,CB224
+Programaci髇 de Bajo Nivel,Ciencias computacionales,Programaci髇,IL358
+Teor韆 de la computaci髇,Ciencias computacionales,Programaci髇,IL357
+Seminario de Integraci髇 Protocolo,Ciencias computacionales,Administrativa,IL369
+Seminario de Integraci髇 Desarrollo,Ciencias computacionales,Administrativa,IL370
+Laboratorio Abierto: Dise駉,Ciencias computacionales,Programaci髇,IL372
+Laboratorio Abierto: Construcci髇,Ciencias computacionales,Programaci髇,IL373
+Laboratorio Abierto: Prueba,Ciencias computacionales,Programaci髇,IL374
+Compiladores,Ciencias computacionales,Programaci髇,IL359
+Programaci髇 paralela y concurrente,Ciencias computacionales,Programaci髇,IL360
+Seguridad de la informaci髇,Ciencias computacionales,Programaci髇,IL368
+Seminario de Integraci髇 Comunicaci髇,Ciencias computacionales,Administrativa,IL371
+Ingenier韆 y sustentabilidad ,Ciencias computacionales,Administrativa,V0717
+Inform醫ica administrativa,Ciencias computacionales,Programaci髇,V0730
+Algoritmos metaheur韘ticos,Ciencias computacionales,Programaci髇,V0726
+Miner韆 de datos,Ciencias computacionales,Programaci髇,CU207
+Innovaci髇 tecnol骻ica y emprendimiento,Ciencias computacionales,Administrativa,V0719
+C醠idad de software,Ciencias computacionales,Programaci髇,V0732
+Administraci髇 de bases de datos,Ciencias computacionales,Programaci髇,V0724
+Sistemas Inteligentes ,Ciencias computacionales,Programaci髇,V0734
+Control de Proyectos,Ciencias computacionales,Programaci髇,V0727
+Tecnolog韆s de Inteligencia Artificial,Ciencias computacionales,Programaci髇,V0728
+Computaci髇 cu醤tica ,Ciencias computacionales,Programaci髇,V0737
+F韘ica cu醤tica,Ciencias computacionales,F韘ica,V0736
+Modelado cu醤tico,Ciencias computacionales,Programaci髇,V0738
+Internet de las cosas,Ciencias computacionales,Programaci髇,V0748
+Desarrollo de p醙inas web en la nube y moviles,Ciencias computacionales,Programaci髇,V0749
+Computaci髇 en frontera,Ciencias computacionales,Programaci髇,V0750
+An醠isis forense digital,Ciencias computacionales,Programaci髇,V0741
+Seguridad defensiva y gesti髇,Ciencias computacionales,Programaci髇,V0740
+Seguridad en redes,Ciencias computacionales,Programaci髇,V0739
+Inducci髇 a la ingenier韆,Ciencias computacionales,Administrativa,V0709
