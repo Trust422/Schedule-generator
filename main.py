@@ -94,8 +94,8 @@ def crossover(padres):
     
 
 class main:    
-    profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv"))
-    materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv"))
+    profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv", encoding='latin-1'))
+    materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv", encoding='latin-1'))
     oferta_academica=of()
     poblacion=100
     generaciones=100
