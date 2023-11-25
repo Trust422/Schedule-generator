@@ -4,12 +4,70 @@ from Clases.profesor import Profesor
 from Clases.curso import Curso
 from Clases.departamento import Departamento
 
+import pandas as pd
+
 class Data:
 
-    SALONES = [['X1', 25], ['X2', 30], ['X3', 45]]
-    '''['X4', 25], ['X5', 35], ['X6', 40],
+    SALONES = pd.read_csv('Archivos de entrada/aulas.csv').values.tolist()
+    CURSOS = pd.read_csv('Archivos de entrada/CURSOS.csv').values.tolist()
+    PROFESORES = pd.read_csv('Archivos de entrada/profesores.csv').values.tolist()
+    TIEMPOS = pd.read_csv('Archivos de entrada/TIEMPOS.csv').values.tolist()
+
+    f_TIEMPOS = list()
+    for i in range(0, len(TIEMPOS)):
+        aux = []
+        aux.append(TIEMPOS[i][0])
+        aux.append(str(TIEMPOS[i][1]+' '+TIEMPOS[i][2]))
+        f_TIEMPOS.append(aux)
+            
+
+    def __init__(self) -> None:
+        self.TAMANIO_POBLACION = 10
+        self.MEJORES_HORARIOS = 1
+        self.TAMANIO_TORNEO = 3
+        self.TASA_MUTACION = 0.1
+
+        self._salones = []
+        self._tiempos = []
+        self._profesores = []
+        self._cursos = []
+        self._departamentos = []
+
+        for i in range(0, len(self.SALONES)):
+            self._salones.append(Salon(self.SALONES[i][0], self.SALONES[i][1]))
+        for i in range(0, len(self.f_TIEMPOS)):
+            self._tiempos.append(Tiempo(self.f_TIEMPOS[i][0], self.f_TIEMPOS[i][1]))
+        for i in range(0, len(self.PROFESORES)):
+            self._profesores.append(Profesor(self.PROFESORES[i][0], self.PROFESORES[i][1], self.PROFESORES[i][2]))
+        for i in range(0, len(self.CURSOS)):
+            self._cursos.append(Curso(self.CURSOS[i][0], self.CURSOS[i][1], self._profesores[0], self.CURSOS[i][3]))
+        
+        deps = []
+        for curso in self.CURSOS:
+            departamento = curso[2]
+            encontrado = False
+
+            for depto in deps:
+                if departamento == depto[0]:
+                    depto[1].append(curso)
+                    encontrado = True
+                    break
+            
+            if not encontrado:
+               deps.append([departamento, [curso]])
+
+            for depto in deps:
+                self._departamentos.append(Departamento(depto[0], depto[1]))
+            
+
+        self._n_clases = 0
+        for i in range(0, len(self._departamentos)):
+            self._n_clases += len(self._departamentos[i].get_cursos())
+
+    '''SALONES = [['X1', 25], ['X2', 30], ['X3', 45], ['X4', 45]]
+    ['X5', 35], ['X6', 40],
     ['X7', 20], ['X8', 30], ['X9', 45],
-    ['X10', 20], ['X11', 30], ['X12', 40]'''
+    ['X10', 20], ['X11', 30], ['X12', 40]
                 
 
     TIEMPOS = [['t1', 'LX 09:00 - 11:00'],
@@ -22,11 +80,13 @@ class Data:
                ['t8', 'MJ 15:00 - 17:00'],
                 ]
     
-    PROFESORES = [['p1', 'Samuel Jackson']
+    PROFESORES = [['p1', 'Samuel Jackson', ['t1','t6', 't7', 't8']],
+                  ['p2', 'John Smith', ['t2', 't3', 't4', 't5']],
+                  ['p3', 'Maria Rodriguez', ['t1']]
                 ]
     
-    '''['p2', 'John Smith'],
-                  ['p3', 'Maria Rodriguez'],
+    
+                  ,
                   ['p4', 'Emily Davis'],
                   ['p5', 'Michael Johnson'],
                   ['p6', 'Sophia Brown'],
@@ -35,7 +95,7 @@ class Data:
                   ['p9', 'Daniel Harris'],
                   ['p10', 'Olivia Wilson'],
                   ['p11', 'William Taylor'],
-                  ['p12', 'Ava Thomas']'''
+                  ['p12', 'Ava Thomas']
     
     def __init__(self) -> None:
         
@@ -45,25 +105,25 @@ class Data:
         self.TASA_MUTACION = 0.1
 
         self._salones = []
-        self._tiempos = []
+        self._TIEMPOS = []
         self._profesores = []
         for i in range(0, len(self.SALONES)):
             self._salones.append(Salon(self.SALONES[i][0], self.SALONES[i][1]))
         for i in range(0, len(self.TIEMPOS)):
-            self._tiempos.append(Tiempo(self.TIEMPOS[i][0], self.TIEMPOS[i][1]))
+            self._TIEMPOS.append(Tiempo(self.TIEMPOS[i][0], self.TIEMPOS[i][1]))
         for i in range(0, len(self.PROFESORES)):
-            self._profesores.append(Profesor(self.PROFESORES[i][0], self.PROFESORES[i][1]))
+            self._profesores.append(Profesor(self.PROFESORES[i][0], self.PROFESORES[i][1], self.PROFESORES[i][2]))
 
         curso1 = Curso('c1', 'Logica matematica', [self._profesores[0]], 30)
         curso2 = Curso('c2', 'Fundamentos de programacion', [self._profesores[0]], 40)
         curso3 = Curso('c3', 'Ecuaciones diferenciales', [self._profesores[0]], 30)
         curso4 = Curso('c4', 'Sistemas dgitales', [self._profesores[0]], 30)
-        curso5 = Curso('c5', 'Estructura de datos', [self._profesores[0]], 30)
-        curso6 = Curso('c6', 'Programación estructurada', [self._profesores[0]], 45)
-        curso7 = Curso('c7', 'Fundamentos de física', [self._profesores[0]], 30)
-        curso8 = Curso('c8', 'Fundamentos de programacion', [self._profesores[0]], 30)
-        curso9 = Curso('c9', 'Logica matematica', [self._profesores[0]], 45)
-        ''' curso9 = Curso('c9', 'Logica matematica', [self._profesores[0], self._profesores[11]], 45)
+        curso5 = Curso('c5', 'Estructura de datos', [self._profesores[1]], 30)
+        curso6 = Curso('c6', 'Programación estructurada', [self._profesores[1]], 45)
+        curso7 = Curso('c7', 'Fundamentos de física', [self._profesores[1]], 30)
+        curso8 = Curso('c8', 'Fundamentos de programacion', [self._profesores[1]], 30)
+        curso9 = Curso('c9', 'Logica matematica', [self._profesores[0], self._profesores[1], self._profesores[2]], 45)
+        curso9 = Curso('c9', 'Logica matematica', [self._profesores[0], self._profesores[11]], 45)
             curso10 = Curso('c10', 'Programacion para internet', [self._profesores[2], self._profesores[4]], 25)
             curso11 = Curso('c11', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
             curso12 = Curso('c12', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
@@ -71,19 +131,17 @@ class Data:
             curso14 = Curso('c14', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
             curso15 = Curso('c15', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
             curso16 = Curso('c16', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
-            curso17 = Curso('c17', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)'''
+            curso17 = Curso('c17', 'Logica matematica', [self._profesores[0], self._profesores[1]], 30)
     
-        self._cursos = [curso1, curso2, curso3, curso4, curso5, curso6, curso7, curso8]
+        self._CURSOS = [curso1, curso2, curso3, curso4, curso5, curso6, curso7, curso8]
 
         dep1 = Departamento("Programacion", [curso2, curso8, curso5, curso6])
         dep2 = Departamento("Matematicas", [curso1, curso3, curso9])
         dep3 = Departamento("Ciencias", [curso4, curso7])
 
-        self._departamentos = [dep1, dep2, dep3]
+        self._DEPARTAMENTOS = [dep1, dep2, dep3]
 
-        self._n_clases = 0
-        for i in range(0, len(self._departamentos)):
-            self._n_clases += len(self._departamentos[i].get_cursos())
+        '''
     
     def get_salones(self): return self._salones
     def get_profesores(self): return self._profesores
@@ -96,9 +154,15 @@ if __name__ == '__main__':
 
     data = Data()
 
-    print(data.get_cursos())
-    print(data.get_departamentos())
+    '''print(data.SALONES)
+    print(data.CURSOS)
+    print(data.PROFESORES)
+    print(data.f_TIEMPOS)
+    print(data.DEPARTAMENTOS)'''
+
+    print(data.get_CURSOS())
+    print(data.get_DEPARTAMENTOS())
     print(data.get_n_clases())
     print(data.get_profesores())
     print(data.get_salones())
-    print(data.get_tiempos())
+    print(data.get_TIEMPOS())

@@ -1,5 +1,6 @@
 from Clases.data import Data
 from Clases.clase import Clase
+from Clases.conflictos import Conflicto
 
 import random as rnd
 
@@ -40,23 +41,35 @@ class Oferta:
         return self._fitness
 
     def calcular_fitness(self):
-        self._n_conflictos = 0 
+        self._conflictos = [] 
         clases = self.get_clases()
         for i in range(0, len(clases)):
+            capacidad_conflicto = list()
+            capacidad_conflicto.append(clases[i])
             if (clases[i].get_salon().get_capacidad() < clases[i].get_curso().get_max_n_alumnos()):
-                self._n_conflictos += 1
+                self._conflictos.append(Conflicto(Conflicto.TipoConflicto.NUM_ESTUDIANTES_CONFLICTO, capacidad_conflicto))
+            if (clases[i].get_tiempo().get_id() not in clases[i].get_profesor().get_disponibilidad()):
+                disponibilidad_conflicto = list()
+                disponibilidad_conflicto.append(clases[i])
+                self._conflictos.append(Conflicto(Conflicto.TipoConflicto.DISPONIBILIDAD_PROFESOR_CONFLICTO, disponibilidad_conflicto))
             for j in range(0, len(clases)):
                 if j >= i:
                     if (clases[i].get_tiempo().get_id() == clases[j].get_tiempo().get_id()) and (clases[i].get_id() != clases[j].get_id()):
                         if clases[i].get_salon().get_numero() == clases[j].get_salon().get_numero(): 
-                            self._n_conflictos += 1
+                            salon_conflicto = list()
+                            salon_conflicto.append(clases[i])
+                            salon_conflicto.append(clases[j])
+                            self._conflictos.append(Conflicto(Conflicto.TipoConflicto.SALON_CONFLICTO, salon_conflicto))
                         if clases[i].get_profesor().get_id() == clases[j].get_profesor().get_id(): 
-                            self._n_conflictos += 1
+                            profesor_conflicto = list()
+                            profesor_conflicto.append(clases[i])
+                            profesor_conflicto.append(clases[i])
+                            self._conflictos.append(Conflicto(Conflicto.TipoConflicto, profesor_conflicto))
                 
-        return 1 / ((1.0 * self._n_conflictos + 1))
+        return 1 / ((1.0 * len(self._conflictos) + 1))
     
     def __str__(self):
-        mi_str = f'# CONFLICTOS -> {self._n_conflictos} \n FITNESS -> {self._fitness} \n'
+        mi_str = f'# CONFLICTOS -> {len(self._conflictos)} \n FITNESS -> {self._fitness} \n'
         for i in range(0, len(self._clases)-1):
             mi_str += str(self._clases[i]) + ", \n"
         mi_str += str(self._clases[len(self._clases)-1])
