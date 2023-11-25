@@ -1,0 +1,10 @@
+﻿NRC,Nombre,Departamento,Profesores,Cantidad Alumnos
+1,Logica matematica,Matematicas,1,30
+2,Fundamentos de Programacion,Programacion,1,40
+3,Ecuaciones diferenciales,Matematicas,1,30
+4,Sistemas digitales,Ciencias,1,30
+5,Estructura de datos,Programacion,2,30
+6,Programacion estructurada,Programacion,2,45
+7,Fundamentos de fisica,Ciencias,2,30
+8,Fundamentos de Programacion,Programacion,2,30
+9,Logica matematica,Matematicas,"1,2,3",45
