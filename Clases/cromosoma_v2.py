@@ -1,5 +1,5 @@
 import random
-
+cantidad_cursos_materia=2
 class Cromosoma:
     def __init__(self, materias):
         # Inicializar el cromosoma con asignaciones aleatorias
@@ -10,7 +10,7 @@ class Cromosoma:
         if len(cursos) == 0:
             return
         for lista_cursos in cursos.keys():
-            cursos_seleccionados = random.sample(cursos[lista_cursos], 4)
+            cursos_seleccionados = random.sample(cursos[lista_cursos], cantidad_cursos_materia)
             for curso in cursos_seleccionados:
                 self.asignaciones.append(curso)
                 
