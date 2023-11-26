@@ -1,5 +1,5 @@
 import random
-cantidad_cursos_materia=2
+cantidad_cursos_materia=4
 class Cromosoma:
     def __init__(self, materias):
         # Inicializar el cromosoma con asignaciones aleatorias
@@ -50,7 +50,7 @@ class Cromosoma:
     def fitness(self):
         choques_p, choques_prof=self.contar_choques_prof()
         choques_s, choques_salon=self.choques_salon()
-        fitness=choques_p 
+        fitness=choques_p + choques_s  
         return fitness
                     
     def crossover(self, otro):
@@ -60,6 +60,16 @@ class Cromosoma:
         hijo1.asignaciones=self.asignaciones[:corte] + otro.asignaciones[corte:]
         hijo2.asignaciones=otro.asignaciones[:corte] + self.asignaciones[corte:] 
         return hijo1, hijo2
+
+    def mutacion(self, turnos):
+        _, choque_salon=self.choques_salon()
+
+        turno=random.choice(list(choque_salon.keys()))
+        llave=random.choice(list(choque_salon[turno].keys()))
+        curso=random.choice(choque_salon[turno][llave])
+        turno_random=random.choice(turnos)
+        if(curso.getProfesor().getDisponibilidad()[turnos.index(turno)] == "1" and curso.getProfesor().getDisponibilidad()[turnos.index(turno)+7] == "1"):
+            curso.setTurno(turno_random)
     def mostrar (self,lista_materia):
         dic={}
         asigna=self.asignaciones[0].getMateria()

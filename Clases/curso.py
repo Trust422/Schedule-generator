@@ -16,7 +16,8 @@ class Curso:
 
     def setNRC(self, NRC: int):
         self._NRC=NRC
-
+    def setTurno(self, turno):
+        self._turno=turno
     #getters
 
     def getProfesor(self) -> pf:
@@ -36,4 +37,4 @@ class Curso:
     #metodos
     def mostrar(self):
         #return self._profesor.getNombre() + " " +self._materia.getNombre() + " " +self.getSalon() +" " + self.getTurno() 
-        return (f"Materia: {self._materia.getNombre()} + turno: {self.getTurno()} + Profesor: {self._profesor.getNombre()}")
+        return (f"Materia: {self._materia.getNombre()} + turno: {self.getTurno()} + Profesor: {self._profesor.getNombre()} + aula: {self._salon}")
