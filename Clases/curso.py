@@ -35,5 +35,5 @@ class Curso:
         return self._turno
     #metodos
     def mostrar(self):
-        return self._profesor.getNombre() + "\n" +self._materia.getNombre() + "\n" +self.getSalon() +"\n" + self.getTurno()+ "\n\n" 
-    
+        #return self._profesor.getNombre() + " " +self._materia.getNombre() + " " +self.getSalon() +" " + self.getTurno() 
+        return (f"Materia: {self._materia.getNombre()} + turno: {self.getTurno()} + Profesor: {self._profesor.getNombre()}")

@@ -3,6 +3,7 @@ class Profesor:
         self._nombre = nombre
         self._disponibilidad = disponibilidad
         self._areas = areas
+        self._horas_disponibles = 0
         self._num_clases=0
         self._cursosAsignados = []
     
@@ -62,4 +63,8 @@ class Profesor:
             return 1
         else:
             return -1
-
+    def contarHoras(self):
+        for i in range(len(self._disponibilidad)):
+            if self._disponibilidad[i] == "1":
+                self._horas_disponibles += 1
+        return self._horas_disponibles

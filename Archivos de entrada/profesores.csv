@@ -1,40 +1,91 @@
-Alfredo Gutierrez,1111000011110000,Programacion
-Conrado Cruz Gomez,1111000011110000,Programacion
-Leopoldo Morales Gonzalez,0000111100001111,Programacion
-Sabrina Lizbeth Vega Maldonado,1111000011110000,Programacion
-Erasmo Antonio Rodriguez,0000111100001111,Programacion
-Luis Felipe Mariscal Lugo,1111000011110000,Programacion
-Miguel Angel Alejandro Islas Toski,0000111100001111,Programacion
-Beatriz Adriana Rivera Aguilar,1111000011110000,Programacion
-Carlos Dario Arenas Yerena,0000111100001111,Programacion
-Angel Tonatiuh Hernandez Casas,1111000011110000,Programacion
-Adriana Pena Perez,0000111100001111,Programacion
-Martha Del Carmen Gutierrez Salmeron ,1111000011110000,Programacion
-Sanchez Santoyo Alejandra,0000111100001111,Programacion
-Zoila Liliana Herrera Lucan,1111000011110000,Programacion
-Thelma Isabel Morales Ramirez,0000111100001111,Programacion
-Luis Alberto Munoz Gomez,1111000011110000,Programacion
-Sergio Ramon Itsuo Higashi Minami,0000111100001111,Arquitectura de computadoras
-Jorge Ernesto Lopez Arce Delgado,1111000011110000,Arquitectura de computadoras
-Rodrigo Antonio Campos Villarreal,0000111100001111,Arquitectura de computadoras
-Agustin Santiago Medina Vazquez,1111000011110000,Arquitectura de computadoras
-Jose Luis Netzahualcoyotl,0000111100001111,Matematicas
-Jose Solis Rodriguez,1111000011110000,Matematicas
-Sara Edith Villalobos Jimenez,0000111100001111,Matematicas
-Maritza Elizabeth Lopez Alcala,1111000011110000,Matematicas
-Elba Lilia De La Cruz Garcia,0000111100001111,Matematicas
-Miriam Ileana Flores Sandoval,1111000011110000,Matematicas
-Jorge Luis Rodriguez Gutierrez,0000111100001111,Matematicas
-Norma Elva Espino Rojas,1111000011110000,Matematicas
-Dulce Angelica Valdivia Chavez,0000111100001111,Administrativa
-Hector Alejandro Galvez Lopez,1111000011110000,Administrativa
-Adriana Liset Lopez Franco,0000111100001111,Administrativa
-Ruben Adrian Gil Rivera ,1111000011110000,Administrativa
-Jose Luis Guerrero Contreras,0000111100001111,Administrativa
-Rocio Del Carmen Morgan Franco,1111000011110000,Administrativa
-Roman Torres Aceves,0000111100001111,Administrativa
-Jesus Alvarez Arellano,1111000011110000,Administrativa
-Carlos Daniel Vazquez Inzunza,0000111100001111,Fisica
-Susana Munoz Villegas,1111000011110000,Fisica
-Diego Fernando Mulato Gomez,0000111100001111,Fisica
-Liliana Vazquez Mercado,1111000011110000,Fisica
+Profesores,Disponibilidad,Area
+Alfredo Gutierrez,11110000111100000000,Programacion
+Conrado Cruz Gomez,11110000111100000000,Programacion
+Leopoldo Morales Gonzalez,00000000111100001111,Programacion
+Sabrina Lizbeth Vega Maldonado,11110000111100000000,Programacion
+Erasmo Antonio Rodriguez,00000000111100001111,Programacion
+Luis Felipe Mariscal Lugo,11110000111100000000,Programacion
+Miguel Angel Alejandro Islas Toski,00000000111100001111,Programacion
+Beatriz Adriana Rivera Aguilar,11110000111100000000,Programacion
+Carlos Dario Arenas Yerena,00000000111100001111,Programacion
+Angel Tonatiuh Hernandez Casas,11110000111100000000,Programacion
+Adriana Pena Perez,00000000111100001111,Programacion
+Martha Del Carmen Gutierrez Salmeron ,00001111000011110000,Programacion
+Sanchez Santoyo Alejandra,00000000111100001111,Programacion
+Zoila Liliana Herrera Lucan,11110000111100000000,Programacion
+Thelma Isabel Morales Ramirez,00001111000011110000,Programacion
+Luis Alberto Munoz Gomez,11110000111100000000,Programacion
+Sergio Ramon Itsuo Higashi Minami,00000000111100001111,Arquitectura de computadoras
+Jorge Ernesto Lopez Arce Delgado,11110000111100000000,Arquitectura de computadoras
+Rodrigo Antonio Campos Villarreal,00001111000011110000,Arquitectura de computadoras
+Agustin Santiago Medina Vazquez,11110000111100000000,Arquitectura de computadoras
+Jose Luis Netzahualcoyotl,00000000111100001111,Matematicas
+Jose Solis Rodriguez,11110000111100000000,Matematicas
+Sara Edith Villalobos Jimenez,00001111000011110000,Matematicas
+Maritza Elizabeth Lopez Alcala,11110000111100000000,Matematicas
+Elba Lilia De La Cruz Garcia,00001111000011110000,Matematicas
+Miriam Ileana Flores Sandoval,11110000111100000000,Matematicas
+Jorge Luis Rodriguez Gutierrez,00001111000011110000,Matematicas
+Norma Elva Espino Rojas,11110000111100000000,Matematicas
+Dulce Angelica Valdivia Chavez,00001111000011110000,Administrativa
+Hector Alejandro Galvez Lopez,00001111000011110000,Administrativa
+Adriana Liset Lopez Franco,00001111000011110000,Administrativa
+Ruben Adrian Gil Rivera ,00001111000011110000,Administrativa
+Jose Luis Guerrero Contreras,00001111000011110000,Administrativa
+Rocio Del Carmen Morgan Franco,11110000111100000000,Administrativa
+Roman Torres Aceves,00001111000011110000,Administrativa
+Jesus Alvarez Arellano,11110000111100000000,Administrativa
+Carlos Daniel Vazquez Inzunza,00001111000011110000,Fisica
+Susana Munoz Villegas,00001111000011110000,Fisica
+Diego Fernando Mulato Gomez,00000000111100001111,Fisica
+Liliana Vazquez Mercado,11110000111100000000,Fisica
+Alfredo Gutierrez,11110000111100000000,Programacion
+Conrado Cruz Gomez,11110000111100000000,Programacion
+Leopoldo Morales Gonzalez,00000000111100001111,Programacion
+Sabrina Lizbeth Vega Maldonado,11110000111100000000,Programacion
+Erasmo Antonio Rodriguez,00000000111100001111,Programacion
+Luis Felipe Mariscal Lugo,11110000111100000000,Programacion
+Miguel Angel Alejandro Islas Toski,00000000111100001111,Programacion
+Beatriz Adriana Rivera Aguilar,11110000111100000000,Programacion
+Carlos Dario Arenas Yerena,00000000111100001111,Programacion
+Angel Tonatiuh Hernandez Casas,11110000111100000000,Programacion
+Adriana Pena Perez,00000000111100001111,Programacion
+Martha Del Carmen Gutierrez Salmeron ,00001111000011110000,Programacion
+Sanchez Santoyo Alejandra,00000000111100001111,Programacion
+Zoila Liliana Herrera Lucan,11110000111100000000,Programacion
+Thelma Isabel Morales Ramirez,00001111000011110000,Programacion
+Alfredo Gutierrez,11110000111100000000,Programacion
+Conrado Cruz Gomez,11110000111100000000,Programacion
+Leopoldo Morales Gonzalez,00000000111100001111,Programacion
+Sabrina Lizbeth Vega Maldonado,11110000111100000000,Programacion
+Erasmo Antonio Rodriguez,00000000111100001111,Programacion
+Luis Felipe Mariscal Lugo,11110000111100000000,Programacion
+Miguel Angel Alejandro Islas Toski,00000000111100001111,Programacion
+Beatriz Adriana Rivera Aguilar,11110000111100000000,Programacion
+Carlos Dario Arenas Yerena,00000000111100001111,Programacion
+Angel Tonatiuh Hernandez Casas,11110000111100000000,Programacion
+Adriana Pena Perez,00000000111100001111,Programacion
+Martha Del Carmen Gutierrez Salmeron ,00001111000011110000,Programacion
+Sanchez Santoyo Alejandra,00000000111100001111,Programacion
+Zoila Liliana Herrera Lucan,11110000111100000000,Programacion
+Thelma Isabel Morales Ramirez,00001111000011110000,Programacion
+Hector Alejandro Galvez Lopez,00001111000011110000,Administrativa
+Adriana Liset Lopez Franco,00001111000011110000,Administrativa
+Ruben Adrian Gil Rivera ,00001111000011110000,Administrativa
+Jose Luis Guerrero Contreras,00001111000011110000,Administrativa
+Rocio Del Carmen Morgan Franco,11110000111100000000,Administrativa
+Luis Felipe Mariscal Lugo,11110000111100000000,Programacion
+Miguel Angel Alejandro Islas Toski,00000000111100001111,Programacion
+Beatriz Adriana Rivera Aguilar,11110000111100000000,Programacion
+Carlos Dario Arenas Yerena,00000000111100001111,Programacion
+Angel Tonatiuh Hernandez Casas,11110000111100000000,Programacion
+Adriana Pena Perez,00000000111100001111,Programacion
+Martha Del Carmen Gutierrez Salmeron ,00001111000011110000,Programacion
+Sanchez Santoyo Alejandra,00000000111100001111,Programacion
+Zoila Liliana Herrera Lucan,11110000111100000000,Programacion
+Thelma Isabel Morales Ramirez,00001111000011110000,Programacion
+Hector Alejandro Galvez Lopez,00001111000011110000,Administrativa
+Adriana Liset Lopez Franco,00001111000011110000,Administrativa
+Ruben Adrian Gil Rivera ,00001111000011110000,Administrativa
+Jose Luis Guerrero Contreras,00001111000011110000,Administrativa
+Rocio Del Carmen Morgan Franco,11110000111100000000,Administrativa
