@@ -1,5 +1,6 @@
 import sys
 import random
+import time 
 sys.path.append("Clases")
 from Clases.profesor import Profesor as prof
 from Clases.materia import Materia as mat
@@ -7,7 +8,8 @@ from Clases.curso import Curso as cur
 from Clases.oferta import Oferta as of
 from Clases.cromosoma_v2 import Cromosoma as cr
 import pandas as pd #libreria para la lectura de archivos de entrada tipo (csv)
-cant_cursos_por_materia=4
+#variables globales
+cant_cursos_por_materia=2 #variable que define la cantidad de cursos por materia
 turnos=[    "l-x 9-11", "l-x 11-13", "l-x 13-15", "l-x 15-17",
             "m-j 9-11", "m-j 11-13", "m-j 13-15", "m-j 15-17",
             "x-v 9-11", "x-v 11-13", "x-v 13-15", "x-v 15-17",
@@ -132,6 +134,7 @@ class main:
     poblacion=1000
     generaciones=200
 
+    tiempo_inicial=time.time()  
     cursos_dispo=cursos_disponibles_posibles(profesores, materias)
     generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
     print (len(list(cursos_dispo.keys())))
@@ -144,9 +147,14 @@ class main:
         descendencia_fitness=calcula_fitness_cromosomas(descendencia)
         descendencia_fitness=seleccion(descendencia_fitness, len(list(descendencia_fitness.keys())))
         generacion_inicial=descendencia_fitness
+        if(generacion_inicial[list(generacion_inicial.keys())[0]]==0):
+            break
         for j in range(int(poblacion*.1)):  
             list(generacion_inicial.keys())[j].mutacion( turnos) 
         
+    tiempo_final=time.time()
+    tiempo_ejecucion=tiempo_final-tiempo_inicial
+    print('tiempo de ejecucion en segundos: ', tiempo_ejecucion)
     dic=list(generacion_inicial)[0].mostrar(list(cursos_dispo.keys()))
     print (len(dic.keys()))
 

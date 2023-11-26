@@ -1,5 +1,5 @@
 import random
-cantidad_cursos_materia=4
+cantidad_cursos_materia=2
 class Cromosoma:
     def __init__(self, materias):
         # Inicializar el cromosoma con asignaciones aleatorias
