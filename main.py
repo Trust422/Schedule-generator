@@ -7,7 +7,7 @@ from Clases.curso import Curso as cur
 from Clases.oferta import Oferta as of
 from Clases.cromosoma_v2 import Cromosoma as cr
 import pandas as pd #libreria para la lectura de archivos de entrada tipo (csv)
-cant_cursos_por_materia=2
+cant_cursos_por_materia=4
 turnos=[    "l-x 9-11", "l-x 11-13", "l-x 13-15", "l-x 15-17",
             "m-j 9-11", "m-j 11-13", "m-j 13-15", "m-j 15-17",
             "x-v 9-11", "x-v 11-13", "x-v 13-15", "x-v 15-17",
@@ -122,13 +122,15 @@ def seleccion(padres, mid):
         regreso[list(padres.keys())[i]]=padres[list(padres.keys())[i]]
     return regreso
 
-
+def mutacion(cromosoma):
+    cromosoma.mutacion()
+    return cromosoma
 
 class main:    
     materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv", encoding='latin-1'))
     profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv", dtype={'Disponibilidad': str},encoding='latin-1'))
     poblacion=1000
-    generaciones=100
+    generaciones=200
 
     cursos_dispo=cursos_disponibles_posibles(profesores, materias)
     generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
@@ -137,12 +139,14 @@ class main:
     for i in range(generaciones):
     
         #padres=seleccionar_mejores(generacion_inicial, int(poblacion*.8))
-        print("mejor fitness genearcion: ", generacion_inicial[list(generacion_inicial.keys())[0]])
+        print(f"mejor fitness genearcion:{i} ", generacion_inicial[list(generacion_inicial.keys())[0]])
         descendencia=crossover(generacion_inicial)
         descendencia_fitness=calcula_fitness_cromosomas(descendencia)
         descendencia_fitness=seleccion(descendencia_fitness, len(list(descendencia_fitness.keys())))
         generacion_inicial=descendencia_fitness
-        #mutacion
+        for j in range(int(poblacion*.1)):  
+            list(generacion_inicial.keys())[j].mutacion( turnos) 
+        
     dic=list(generacion_inicial)[0].mostrar(list(cursos_dispo.keys()))
     print (len(dic.keys()))
 
