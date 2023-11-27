@@ -14,15 +14,15 @@ turnos=[
         "l-x 09-11", "l-x 11-13", "l-x 13-15", "l-x 15-17",
         "m-j 09-11", "m-j 11-13", "m-j 13-15", "m-j 15-17",
         "x-v 09-11", "x-v 11-13", "x-v 13-15", "x-v 15-17",
-        ] #lista de los turnos con los que se creará por dia y hora- 12 pares en total
+        ]  #111100001111000000000 #ejemplo de disponibilidad de un profesor 
 
 salones=[
+    
         "x001", "x002", "x003", "x004", "x005",
         "x006", "x007", "x008", "x009", "x010",
         "x011", "x012", "x013", "x014", "x015",
         "x016", "x017", "x018", "x019", "x020",
-        ]#lista de los salones del edificio x - 20 salones en total
-#metodos para lectura de csv
+        ]
 horas_dispo_area={}
 materias_por_area={}
 def ingresar_profesores_desde_archivo(archivo_profesores: pd.DataFrame): 
@@ -41,7 +41,6 @@ def ingresar_profesores_desde_archivo(archivo_profesores: pd.DataFrame):
         profesores.append(prof(archivo_profesores.iloc[i,0], str(archivo_profesores.iloc[i,1]), [archivo_profesores.iloc[i,2]])) 
         horas_dispo_area[archivo_profesores.iloc[i,2]]= horas_dispo_area[archivo_profesores.iloc[i,2]]+profesores[i].contarHoras()
     return profesores
-
 def ingresar_cursos_desde_archivo(archivo_cursos: pd.DataFrame):
     """
     INGRESO DE ARCHVOS CSV DE MATERIAS
@@ -76,6 +75,19 @@ def mostrar_profesores(profesores: list[prof]): #funcion para imprimir la lista 
     for profesor in profesores:
         print(profesor.mostrar_profesor())
     print("Numero total de profesores: " + str(len(profesores)))
+def generar_dataframe_salida(mejor_cromosoma: cr, cursos_dispo: dict[str, list[cur]]):
+    """
+    GENERAR DATAFRAME DE SALIDA
+    Funcion que genera un dataframe de salida con los cursos asignados por materia
+    \nparametros: \n
+    mejor_cromosoma: mejor cromosoma de la generacion
+    \nregresa un dataframe con los cursos asignados por materia
+    """
+    df=pd.DataFrame(columns=["Materia", "Curso", "Profesor", "Salon", "Turno"])
+    for asignacion in mejor_cromosoma.asignaciones:
+        df=df.append({"Materia": asignacion.getMateria().getNombre(), "Curso": asignacion.getNRC(), "Profesor": asignacion.getProfesor().getNombre(), "Salon": asignacion.getSalon(), "Turno": asignacion.getTurno()}, ignore_index=True)
+    return df
+
 #filtrado de profesores
 def profesores_pertenecientes_Area(profesores: list[prof], area: str):#funcion en la que se regresa una lista de profesores pertenecientes al area definida en la llamda a la funcion
     """
@@ -117,7 +129,7 @@ def cursos_disponibles_posibles(profesores: prof, materias: mat):
             for materia in materias_misma_area:
                 for salon in salones:
                     for i in range(len(turnos)):
-                            if profesor.getDisponibilidad()[i] == "1" and profesor.getDisponibilidad()[i+7] == "1": #se verifica la disponibiliad de esta manera ya que se manejan 12 turnos
+                            if profesor.getDisponibilidad()[i] == "1" and profesor.getDisponibilidad()[i+8] == "1": #se verifica la disponibiliad de esta manera ya que se manejan 12 turnos
                                 curso=cur(profesor, materia, salon, turnos[i]) #creacion de un objeto curso
                                 if materia.getNombre() not in cursos_dispo: #verificacion si en el diccionario de cursos_dispo ya hay un apartado con el nombre de la materia
                                     cursos_dispo[materia.getNombre()]=[] #si no existe se crea la key
@@ -127,7 +139,8 @@ def cursos_disponibles_posibles(profesores: prof, materias: mat):
 #implementación del Algortimo Genetico
 def inicializacion_AG(cursos_dispo : dict, num_cromosomas: int):
     """
-    Funcion que crea la primera generacion de cromosomas
+    Funcion que crea la primera generacion de cromosomas utilza el cosntructor de la clase cromosoma
+    y calcula el fitness de los cromosomas
     \nparametros: \n
     cursos_dispo: diccionario con todos los cursos disponibles
     num_cromosomas: numero de cromosomas a crear
@@ -179,7 +192,7 @@ def seleccion(padres: dict[cr, int], mid: int):
     for i in range (int(mid/2)):
         regreso[list(padres.keys())[i]]=padres[list(padres.keys())[i]]
     return regreso
-def mutaciones(cromosomas : dict[cr, int], poblacion: int, turnos: list[str] ):
+def mutaciones(cromosomas : dict[cr, int], poblacion: int):
     """
     Funcion que realiza las mutaciones de los cromosomas solamente muta el 10% de la poblacion
     \n se utiliza la funcion mutacion de la clase cromosoma
@@ -190,12 +203,12 @@ def mutaciones(cromosomas : dict[cr, int], poblacion: int, turnos: list[str] ):
     \n"""
 
     for j in range(int(poblacion*.1)):  
-        list(cromosomas.keys())[j].mutacion( turnos)
+        list(cromosomas.keys())[j].mutacion( turnos )
 class main:    
     materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv", encoding='latin-1'))
     profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv", dtype={'Disponibilidad': str},encoding='latin-1'))
     poblacion=1000
-    generaciones=100 
+    generaciones=200
     cursos_dispo=cursos_disponibles_posibles(profesores, materias)
     generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
     for i in range(generaciones):
@@ -208,13 +221,18 @@ class main:
         #intercambio
         generacion_inicial=descendencia_fitness 
         #mutacion
-        mutaciones(generacion_inicial, poblacion, turnos)
+        mutaciones(generacion_inicial, poblacion)
         #condicion de paro
         if(generacion_inicial[list(generacion_inicial.keys())[0]]==0):
             break 
     
     #mostrar resultados
-    dic=list(generacion_inicial)[0].mostrar(list(cursos_dispo.keys()))
+    #dic=list(generacion_inicial)[0].mostrar(list(cursos_dispo.keys()))
+    #generar dataframe de salida
+    df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
+    print(df)
+    df.to_csv("Archivos de salida/salida.csv")
+
 
     #medir la cantidad de horas disponibles por area
     for curso in horas_dispo_area:

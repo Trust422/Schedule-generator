@@ -110,8 +110,14 @@ class Cromosoma:
         llave=random.choice(list(choque_salon[turno].keys()))
         curso=random.choice(choque_salon[turno][llave])
         turno_random=random.choice(turnos)
-        if(curso.getProfesor().getDisponibilidad()[turnos.index(turno)] == "1" and curso.getProfesor().getDisponibilidad()[turnos.index(turno)+7] == "1"):
+        if(curso.getProfesor().getDisponibilidad()[turnos.index(turno)] == "1" and curso.getProfesor().getDisponibilidad()[turnos.index(turno)+8] == "1"):
             curso.setTurno(turno_random)
+    def mutacion_v2(self, salones):
+        """
+        FUNCION MUTACION\n
+        recibe una lista de salones\n
+        realiza una cambio aleatori0 de salon a un curso que tenga choques de salon \n
+        se utiliza la funcion choques_salon para obtener los choques de salon\n"""
     def mostrar (self,lista_materia):
         """
         Funcion mostrar\n

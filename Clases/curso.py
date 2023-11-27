@@ -96,4 +96,4 @@ class Curso:
         Regresa una cadena con la informacion del curso\n
         (materia, turno, profesor, aula, NRC)
         """
-        return (f"Materia: {self._materia.getNombre()} + turno: {self.getTurno()} + Profesor: {self._profesor.getNombre()} + aula: {self._salon} + NRC: {self._NRC}")
+        return (f"Materia: {self._materia.getNombre()} + turno: {self.getTurno()} + Profesor: {self._profesor} + aula: {self._salon} + NRC: {self._NRC}")
