@@ -1,88 +1,84 @@
 import random
 
 class Cromosoma:
-    def __init__(self, materias, salones, turnos):
+    def __init__(self, materias):
         # Inicializar el cromosoma con asignaciones aleatorias
-        self.asignaciones = {}
-        self.generar_asignaciones_aleatorias(materias, salones, turnos)
+        self.asignaciones = []  # Inicializar como una lista
+        self.generar_asignaciones_aleatorias(materias)
 
-    def generar_asignaciones_aleatorias(self, cursos, salones, turnos):
-        for materia, lista_cursos in cursos.items():
-                cursos_seleccionados = random.sample(lista_cursos, min(4, len(lista_cursos)))
-                for curso in cursos_seleccionados:
-                    # Utilizar los valores de turno y salon del objeto curso
-                    turno = curso.getTurno()
-                    salon = curso.getSalon()
-                    profesor = curso.getProfesor()
-                    # Verificar si la asignación ya existe
-                    while (materia, turno) in self.asignaciones:
-                        # Si ya existe, seleccionar otro curso
-                        curso = random.choice(lista_cursos)
-                        turno = curso.getTurno()
-                        salon = curso.getSalon()
-                        profesor = curso.getProfesor()
+    def generar_asignaciones_aleatorias(self, cursos: dict):
 
-                    self.asignaciones[(materia, turno)] = {"salon": salon, "profesor": profesor}
-
+        for lista_cursos in cursos.keys():  # Usar .values() para obtener solo los valores del diccionario
+            cursos_seleccionados = random.sample(cursos)
+            for curso in cursos_seleccionados:
+                # Utilizar los valores de turno y salon del objeto curso
+                print (curso, "curso")
+                #self.asignaciones.append(curso)  # Agregar el curso directamente
 
     def __str__(self):
         # Método para imprimir el cromosoma de manera legible
         return str(self.asignaciones)
-    def getKeys(self):
-        return list(((self.asignaciones.keys())))
 
     def mostrar(self):
         # Método para mostrar cada asignación en una línea separada
-        for (materia, turno), info in self.asignaciones.items():
-            print(f"{materia} - {turno}: salon: {info['salon']} - profesor:  {info['profesor'].getNombre()}")
+        print("Cromosoma:")
+        for curso in self.asignaciones:
+            print(curso.getProfesor().getNombre() + "\n" + curso.getMateria().getNombre() + "\n" + curso.getSalon() + "\n" + curso.getTurno() + "\n\n")
+
+    def contar_choques_prof(self):
+        choques_profesor = {}
+        choques = 0
+        for curso in self.asignaciones:
+            profesor = curso.getProfesor()
+            turno = curso.getTurno()
+            if turno not in choques_profesor:
+                choques_profesor[turno] = {}
+
+            if profesor in choques_profesor[turno]:
+                choques_profesor[turno][profesor] = curso.getMateria()
+                choques += 1
+            else:
+                choques_profesor[turno][profesor] = curso.getMateria()
+        return choques, choques_profesor
+
+    def contar_choques_salon(self):
+        choques_salon = {}
+        choques = 0
+        for curso in self.asignaciones:
+            salon = curso.getSalon()
+            turno = curso.getTurno()
+            if turno not in choques_salon:
+                choques_salon[turno] = {}
+
+            if salon in choques_salon[turno]:
+                choques_salon[turno][salon] += 1
+                choques += 1
+            else:
+                choques_salon[turno][salon] = 1
+        return choques
 
     def fitness(self):
-        def contar_choques_prof(self):
-            choques_profesor = {}
-            choques=0
-            for asignacion, detalles in self.asignaciones.items():
-                profesor = detalles['profesor']
-                turno = asignacion[1]
+        choques_prof, _ = self.contar_choques_prof()
+        choques_sal = self.contar_choques_salon()
+        #print (choques_prof, choques_sal, "fitness")
+        return choques_prof + choques_sal
 
-                if turno not in choques_profesor:
-                    choques_profesor[turno] = {}
-
-                if profesor in choques_profesor[turno]:
-                    choques_profesor[turno][profesor] += 1
-                    choques+=1
-                else:
-                    choques_profesor[turno][profesor] = 1
-            return choques
-        def imprimir_choques(choques_profesor):
-            for turno, profesores_en_turno in choques_profesor.items():
-                print(f"\nTurno: {turno}")
-                for profesor, cantidad_choques in profesores_en_turno.items():
-                    if cantidad_choques > 1:
-                        print(f"Profesor: {profesor.getNombre()} - Choques: {cantidad_choques}")
-        def contar_choques_salon(self):
-            choques_salon={}
-            choques=0
-            for asignacion, detalles in self.asignaciones.items():
-                salon = detalles['salon']
-                turno = asignacion[1]
-
-                if turno not in choques_salon:
-                    choques_salon[turno] = {}
-
-                if salon in choques_salon[turno]:
-                    choques_salon[turno][salon] += 1
-                    choques+=1
-                else:
-                    choques_salon[turno][salon] = 1
-            return choques
-        choques_prof=contar_choques_prof(self)
-        choques_sal=contar_choques_salon(self)
-        return(choques_prof+ choques_sal) #cantidad de cursos por materia y distribucion 
     def crossover(self, otro):
         punto_corte = random.randint(0, len(self.asignaciones))
-        hijo = Cromosoma({}, 0, 0)
-        hijo.asignaciones = dict(list(self.asignaciones.items())[:punto_corte])
-        for asignacion, detalles in otro.asignaciones.items():
-            if asignacion not in hijo.asignaciones:
-                hijo.asignaciones[asignacion] = detalles
+        # punto_corte = len(self.asignaciones) // 2  # Comentado para usar el punto de corte aleatorio
+        hijo = Cromosoma([])
+        hijo.asignaciones = self.asignaciones[:punto_corte] + otro.asignaciones[punto_corte:]
         return hijo
+
+    def mutacion(self, turnos):
+        _, choques_profesor = self.contar_choques_prof()
+
+        for curso in self.asignaciones:
+            profesor = curso.getProfesor()
+            turno = curso.getTurno()
+            if profesor in choques_profesor[turno]:
+                if curso.getProfesor().getDisponibilidad()[turno] == "1" and curso.getProfesor().getDisponibilidad()[turno + 7] == "1":
+                    curso.setTurno(random.choice(turnos))
+
+    def calcular_cant_clases_total(self):
+        return len(self.asignaciones)

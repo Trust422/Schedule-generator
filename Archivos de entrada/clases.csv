@@ -1,60 +1,61 @@
-Fundamentos de programación,Ciencias computacionales,Programación,I5288
-Lógica mátematica,Ciencias computacionales,Matemáticas,I5247
-Precálculo,Ciencias computacionales,Matemáticas,IG738
-Fundamentos de física,Ciencias computacionales,Física,IL340
-Introducción a la ingeniería,Ciencias computacionales,Administrativa,IL342
-Programación estructurada,Ciencias computacionales,Programación,IL352
-Matemáticas discretas,Ciencias computacionales,Matemáticas,IL345
-Calculo diferencial e integral,Ciencias computacionales,Matemáticas,IL344
-mecánica,Ciencias computacionales,Física,IL343
-Administraciónn de proyectos tecnológicos,Ciencias computacionales,Administrativa,IL353
-Programación orientada a objetos,Ciencias computacionales,Programación,I5289
-Algebra lineal,Ciencias computacionales,Matemáticas,IB056
-Ecuaciones diferenciales,Ciencias computacionales,Matemáticas,IL347
-Circuitos Electrónicos y electromagnetismo,Ciencias computacionales,Física,IL346
+Materia, Academia, Area, Clave
+Fundamentos de programacion,Ciencias computacionales,Programacion,I5288
+Logica matematica,Ciencias computacionales,Matematicas,I5247
+Precalculo,Ciencias computacionales,Matematicas,IG738
+Fundamentos de fisica,Ciencias computacionales,Fisica,IL340
+Introduccion a la ingenieria,Ciencias computacionales,Administrativa,IL342
+Programacion estructurada,Ciencias computacionales,Programacion,IL352
+Matematicas discretas,Ciencias computacionales,Matematicas,IL345
+Calculo diferencial e integral,Ciencias computacionales,Matematicas,IL344
+mecanica,Ciencias computacionales,Fisica,IL343
+Administracionn de proyectos tecnologicos,Ciencias computacionales,Administrativa,IL353
+Programacion orientada a objetos,Ciencias computacionales,Programacion,I5289
+Algebra lineal,Ciencias computacionales,Matematicas,IB056
+Ecuaciones diferenciales,Ciencias computacionales,Matematicas,IL347
+Circuitos Electronicos y electromagnetismo,Ciencias computacionales,Arquitectura de computadoras,IL346
 Sistemas digitales,Ciencias computacionales,Arquitectura de computadoras,IL363
-Estructura de datos,Ciencias computacionales,Estructura de datos,IL354
-Probabilidad y estadística,Ciencias computacionales,Matemáticas,IB067
-Métodos numéricos,Ciencias computacionales,Matemáticas,IL348
+Estructura de datos,Ciencias computacionales,Programacion,IL354
+Probabilidad y estadistica,Ciencias computacionales,Matematicas,IB067
+Metodos numericos,Ciencias computacionales,Matematicas,IL348
 Arquitectura de computadoras,Ciencias computacionales,Arquitectura de computadoras,IL365
-Programación para internet,Ciencias computacionales,Programación,IL362
+Programacion para internet,Ciencias computacionales,Programacion,IL362
 Liderazgo y emprendimiento,Ciencias computacionales,Administrativa,IL350
-Análisis de algoritmos,Ciencias computacionales,Programación,IL355
-Bases de datos,Ciencias computacionales,Programación,IL356
-Redes de computadoras,Ciencias computacionales,Programación,IL364
-Fundamentos de IA,Ciencias computacionales,Programación,IL361
-Sistemas operativos,Ciencias computacionales,Programación,IL366
-Innovación y tecnología,Ciencias computacionales,Administrativa,IL351
-Interacción Humano Computadora,Ciencias computacionales,Programación,IL367
-Ingeniería de Software,Ciencias computacionales,Programación,CB224
-Programación de Bajo Nivel,Ciencias computacionales,Programación,IL358
-Teoría de la computación,Ciencias computacionales,Programación,IL357
-Seminario de Integración Protocolo,Ciencias computacionales,Administrativa,IL369
-Seminario de Integración Desarrollo,Ciencias computacionales,Administrativa,IL370
-Laboratorio Abierto: Diseño,Ciencias computacionales,Programación,IL372
-Laboratorio Abierto: Construcción,Ciencias computacionales,Programación,IL373
-Laboratorio Abierto: Prueba,Ciencias computacionales,Programación,IL374
-Compiladores,Ciencias computacionales,Programación,IL359
-Programación paralela y concurrente,Ciencias computacionales,Programación,IL360
-Seguridad de la información,Ciencias computacionales,Programación,IL368
-Seminario de Integración Comunicación,Ciencias computacionales,Administrativa,IL371
-Ingeniería y sustentabilidad ,Ciencias computacionales,Administrativa,V0717
-Informática administrativa,Ciencias computacionales,Programación,V0730
-Algoritmos metaheurísticos,Ciencias computacionales,Programación,V0726
-Minería de datos,Ciencias computacionales,Programación,CU207
-Innovación tecnológica y emprendimiento,Ciencias computacionales,Administrativa,V0719
-Cálidad de software,Ciencias computacionales,Programación,V0732
-Administración de bases de datos,Ciencias computacionales,Programación,V0724
-Sistemas Inteligentes ,Ciencias computacionales,Programación,V0734
-Control de Proyectos,Ciencias computacionales,Programación,V0727
-Tecnologías de Inteligencia Artificial,Ciencias computacionales,Programación,V0728
-Computación cuántica ,Ciencias computacionales,Programación,V0737
-Física cuántica,Ciencias computacionales,Física,V0736
-Modelado cuántico,Ciencias computacionales,Programación,V0738
-Internet de las cosas,Ciencias computacionales,Programación,V0748
-Desarrollo de páginas web en la nube y moviles,Ciencias computacionales,Programación,V0749
-Computación en frontera,Ciencias computacionales,Programación,V0750
-Análisis forense digital,Ciencias computacionales,Programación,V0741
-Seguridad defensiva y gestión,Ciencias computacionales,Programación,V0740
-Seguridad en redes,Ciencias computacionales,Programación,V0739
-Inducción a la ingeniería,Ciencias computacionales,Administrativa,V0709
+Analisis de algoritmos,Ciencias computacionales,Programacion,IL355
+Bases de datos,Ciencias computacionales,Programacion,IL356
+Redes de computadoras,Ciencias computacionales,Programacion,IL364
+Fundamentos de IA,Ciencias computacionales,Inteligencia Artificial,IL361
+Sistemas operativos,Ciencias computacionales,Programacion,IL366
+Innovacion y tecnologia,Ciencias computacionales,Administrativa,IL351
+Interaccion Humano Computadora,Ciencias computacionales,Programacion,IL367
+Ingenieria de Software,Ciencias computacionales,Programacion,CB224
+Programacion de Bajo Nivel,Ciencias computacionales,Programacion,IL358
+Teoria de la computacion,Ciencias computacionales,Programacion,IL357
+Seminario de Integracion Protocolo,Ciencias computacionales,Administrativa,IL369
+Seminario de Integracion Desarrollo,Ciencias computacionales,Administrativa,IL370
+Laboratorio Abierto: Disenio,Ciencias computacionales,Programacion,IL372
+Laboratorio Abierto: Construccion,Ciencias computacionales,Programacion,IL373
+Laboratorio Abierto: Prueba,Ciencias computacionales,Programacion,IL374
+Compiladores,Ciencias computacionales,Programacion,IL359
+Programacion paralela y concurrente,Ciencias computacionales,Programacion,IL360
+Seguridad de la informacion,Ciencias computacionales,Programacion,IL368
+Seminario de Integracion Comunicacion,Ciencias computacionales,Administrativa,IL371
+Ingenieria y sustentabilidad ,Ciencias computacionales,Administrativa,V0717
+Informatica administrativa,Ciencias computacionales,Programacion,V0730
+Algoritmos metaheuristicos,Ciencias computacionales,Inteligencia Artificial,V0726
+Mineria de datos,Ciencias computacionales,Ciberseguridad,CU207
+Innovacion tecnologica y emprendimiento,Ciencias computacionales,Administrativa,V0719
+Calidad de software,Ciencias computacionales,Programacion,V0732
+Administracion de bases de datos,Ciencias computacionales,Programacion,V0724
+Sistemas Inteligentes,Ciencias computacionales,Inteligencia Artificial,V0734
+Control de Proyectos,Ciencias computacionales,Administrativa,V0727
+Tecnologias de Inteligencia Artificial,Ciencias computacionales,Inteligencia Artificial,V0728
+Computacion cuantica ,Ciencias computacionales,Programacion,V0737
+Fisica cuantica,Ciencias computacionales,Fisica,V0736
+Modelado cuantico,Ciencias computacionales,Fisica,V0738
+Internet de las cosas,Ciencias computacionales,Programacion,V0748
+Desarrollo de paginas web en la nube y moviles,Ciencias computacionales,Programacion,V0749
+Computacion en frontera,Ciencias computacionales,Ciberseguridad,V0750
+Analisis forense digital,Ciencias computacionales,Ciberseguridad,V0741
+Seguridad defensiva y gestion,Ciencias computacionales,Ciberseguridad,V0740
+Seguridad en redes,Ciencias computacionales,Ciberseguridad,V0739
+Induccion a la ingenieria,Ciencias computacionales,Administrativa,V0709
