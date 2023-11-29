@@ -16,7 +16,7 @@ class Ventana_Principal:
     def __init__(self, raiz):
         #Comienza la declaracion de los botones y la parte que vera el usuario en la primera interfaz
         self.ventana_raiz=raiz
-        self.ventana_raiz.title("Generador de horarios")
+        self.ventana_raiz.title("TimeSculpt")
         self.ventana_raiz.resizable(0,0)
         self.ventana_raiz.iconbitmap("imagenes\icono.ico")
 
@@ -40,41 +40,15 @@ class Ventana_Principal:
         self.label_mostrar_cursos=self.crearEntryMostrarRuta(mostrar_nombre_archivo_cursos,3,0)
         self.cargar_archivo_cursos=self.crearBotonCargaArchivos(mostrar_nombre_archivo_cursos,'cursos',1,3)
 
-        #Esta parte se encarga de mostrar lo relacionado a las aulas
-        self.label_aula=self.crearEtiquetasIdentificadoras("Archivo aulas",4,0,1)
-        self.label_mostrar_aulas=self.crearEntryMostrarRuta(mostrar_nombre_archivo_aulas,5,0)
-        self.cargar_archivo_aulas=self.crearBotonCargaArchivos(mostrar_nombre_archivo_aulas,'aulas',1,5)
-        
-        #En este apartado es unicamente para capturar el turno preferido
-        self.label_horario_preferido=self.crearEtiquetasIdentificadoras("Horario preferido",0,2,2)
-        self.estilo=tb.Style()
-        self.estilo.configure("info.TRadiobutton", background="#444444")
-        self.vespertino=tb.Radiobutton(#Boton para seleccionar el turno vespertino 
-            self.frame_cargar_datos,
-            text="Vespertino(1-5)",
-            value=1,
-            variable=opcion,
-            bootstyle="info",
-            style="info.TRadiobutton"
-        ).grid(row=1,column=2,padx=5,pady=5)
-        self.matutino=tb.Radiobutton(#Boton para seleccionar el turno matutino
-            self.frame_cargar_datos,
-            text="Matutino(9-1)",
-            value=2,
-            variable=opcion,
-            bootstyle="info",
-            style="info.TRadiobutton"
-        ).grid(row=1,column=3,padx=5,pady=5)
-
         #Este boton esta pensado para que ya realice toda la parte logica y que pase a la siguiente interfaz
         self.generar_resultados=tb.Button(
             self.frame_cargar_datos,
             text="Generar",
-            state="disabled",
+            state="normal",
             command=self.generar,
             bootstyle="info"
         )
-        self.generar_resultados.grid(row=5,column=2,columnspan=2,padx=5,pady=5)
+        self.generar_resultados.grid(row=5,column=0,columnspan=2,padx=5,pady=30)
 
         #Crear un pequeño menu para mostrar ayuda en caso de que se necesite y los creditos.
         self.menu_principal=tk.Menu(self.ventana_raiz)
@@ -99,7 +73,7 @@ class Ventana_Principal:
             text="Cargar Archivo",
             command=lambda: self.cargarArchivo(mostrar_nombre_archivo,clave),
             bootstyle="info"
-        ).grid(row=row,column=colum,padx=5,pady=5)
+        ).grid(row=row,column=colum,padx=20,pady=5)
         return boton
     
     #Se creo una funcion para encapsular las etiquetas que sirven para identificar la carga de los archivos
@@ -121,7 +95,7 @@ class Ventana_Principal:
             textvariable=variableArchivo,
             font=("Tahoma",10),
             bootstyle=INFO,
-        ).grid(row=row,column=colum,padx=5,pady=5)
+        ).grid(row=row,column=colum,padx=20,pady=5)
         return entry
     
     #Se declara una funcion para cargar los archivos
@@ -136,15 +110,8 @@ class Ventana_Principal:
     
     #Por el momento solo establece el turno de preferencia
     def generar(self):
-        if opcion.get()==1:
-            turnoPreferido.set("v")
-        elif opcion.get()==2:
-            turnoPreferido.set("m")
-        else:
-            turnoPreferido.set("no se asigno ningun valor")
         self.abrir_ventana_secundaria()
-        print(opcion.get())
-        print(turnoPreferido.get())
+
     
     #Se agrego una funcion para crear la segunda interfaz
     def abrir_ventana_secundaria(self):
@@ -152,12 +119,12 @@ class Ventana_Principal:
     
     #Se creo una funcion que se encarga de verificar que si se hayan cargado archivos a la interfaz
     def verificar_ejecucion(self):
-        if rutas_archivos["profesores"] !="" and rutas_archivos["cursos"] !="" and rutas_archivos["aulas"] !="":
+        if rutas_archivos["profesores"] !="" and rutas_archivos["cursos"] !="":
             self.generar_resultados.configure(state="normal")
         else:
             self.generar_resultados.configure(state="disabled")
     
-    #Funcion que se encarga de mostrar los credits, cuando es solicitada
+    #Funcion que se encarga de mostrar los creditos, cuando es solicitada
     def mostrar_creditos(self):
         braulio="Administrador\nBraulio Emmanuel Hernandez Martin\nbraulio.hmartin@alumnos.udg.mx\n"
         Marcos="Desarrollador Backend\nMarcos Castellanos Villaseñor\nmarcos.castellanos7815@alumnos.udg.mx\n"
@@ -172,7 +139,8 @@ class Ventana_Principal:
                       "\nEs indispensable que el archivo cargado sea csv.")
     def mostrar_ayuda_generar(self):
         Messagebox.ok("El boton generar, es el encargado de generarte un horario."+
-                      "\nEste se activara hasta que todos los archivos hayan sido cargados.")
+                      "\nEste se activara hasta que todos los archivos hayan sido cargados."+
+                      "\n\nEs indispensable saber, que la generacion puede tardar un poco.")
     def mostrar_ayuda_segunda_ventana(self):
         Messagebox.ok("La segunda ventana es la encargada de mostrarte el horario propuesto, segun los archivos cargados."+
                       "\nEsta no cerrara, a menos que presiones el boton 'Regresar'.")
@@ -181,12 +149,9 @@ class Ventana_Principal:
                       "no dude comunicarse con cualquiera de nosotros mediante los correos que se muestran en 'Creditos'.")
         
 root= tb.Window(themename="darkly")
-rutas_archivos={'profesores' : '', 'cursos':'','aulas':''}
+rutas_archivos={'profesores' : '', 'cursos':''}
 mostrar_nombre_archivo_prof=tk.StringVar()
 mostrar_nombre_archivo_cursos=tk.StringVar()
-mostrar_nombre_archivo_aulas=tk.StringVar()
-turnoPreferido=tk.StringVar()
-opcion=tk.IntVar()
 app=Ventana_Principal(root)
 
 root.mainloop()
