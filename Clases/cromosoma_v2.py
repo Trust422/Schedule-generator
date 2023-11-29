@@ -98,7 +98,7 @@ class Cromosoma:
         """
         FUNCION MUTACION\n
         recibe una lista de turnos\n
-        realiza una cambio aleatori0 de salon a un curso que tenga choques de salon \n
+        realiza una cambio aleatori0 de turno a un curso que tenga choques de salon \n
         se utiliza la funcion choques_salon para obtener los choques de salon\n
         verifica internamente que el profesor este disponible en el nuevo turno\n
         Parametros: \n

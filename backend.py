@@ -8,6 +8,7 @@ from Clases.oferta import Oferta as of
 from Clases.cromosoma_v2 import Cromosoma as cr
 import pandas as pd 
 
+
 cant_cursos_materia=2 #variable que define la cantidad de cursos por materia
 
 turnos=[
@@ -137,7 +138,7 @@ def cursos_disponibles_posibles(profesores: prof, materias: mat):
 
     return cursos_dispo
 #implementación del Algortimo Genetico
-def inicializacion_AG(cursos_dispo : dict, num_cromosomas: int):
+def inicializacion_AG(cursos_dispo : dict, num_cromosomas: int) -> dict[cr, int]:
     """
     Funcion que crea la primera generacion de cromosomas utilza el cosntructor de la clase cromosoma
     y calcula el fitness de los cromosomas
@@ -152,7 +153,7 @@ def inicializacion_AG(cursos_dispo : dict, num_cromosomas: int):
 
     fitness_cromo=calcula_fitness_cromosomas(cromosomas)
     return fitness_cromo
-def calcula_fitness_cromosomas(cromosomas: list[cr]):
+def calcula_fitness_cromosomas(cromosomas: list[cr]) -> dict[cr, int]:
     """
     Funcion que calcula el fitness de los cromosomas
     \nparametros: \n
@@ -164,7 +165,7 @@ def calcula_fitness_cromosomas(cromosomas: list[cr]):
         fitness_cromo[cromosomas[i]]=cromosomas[i].fitness()
     fitness_cromo = dict(sorted(fitness_cromo.items(), key=lambda item: item[1])) 
     return fitness_cromo
-def crossover(padres: dict[cr, int]):
+def crossover(padres: dict[cr, int]) -> list[cr]:
     """
     Funcion que realiza el crossover de los cromosomas
     \nparametros: \n
@@ -181,7 +182,7 @@ def crossover(padres: dict[cr, int]):
         hijos.append(hijo1)
         hijos.append(hijo2)
     return hijos
-def seleccion(padres: dict[cr, int], mid: int):
+def seleccion(padres: dict[cr, int], mid: int) -> dict[cr, int]:
     """
     Funcion que selecciona los mejores cromosomas de la generacion
     \nparametros: \n
@@ -202,43 +203,56 @@ def mutaciones(cromosomas : dict[cr, int], poblacion: int):
     turnos: lista de turnos disponibles para asignar
     \n"""
 
-    for j in range(int(poblacion*.1)):  
-        list(cromosomas.keys())[j].mutacion( turnos )
-class main:    
-    materias = ingresar_cursos_desde_archivo( pd.read_csv("Archivos de entrada/clases.csv", encoding='latin-1'))
-    profesores = ingresar_profesores_desde_archivo(pd.read_csv("Archivos de entrada/profesores.csv", dtype={'Disponibilidad': str},encoding='latin-1'))
-    poblacion=1000
-    generaciones=200
-    cursos_dispo=cursos_disponibles_posibles(profesores, materias)
-    generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
-    for i in range(generaciones):
-    
-        print(f"mejor fitness generacion:{i} ", generacion_inicial[list(generacion_inicial.keys())[0]])
-        #descendencia
-        descendencia_fitness=calcula_fitness_cromosomas(crossover(generacion_inicial))
-        #seleccion 
-        descendencia_fitness=seleccion(descendencia_fitness, len(list(descendencia_fitness.keys()))) 
-        #intercambio
-        generacion_inicial=descendencia_fitness 
-        #mutacion
-        mutaciones(generacion_inicial, poblacion)
-        #condicion de paro
-        if(generacion_inicial[list(generacion_inicial.keys())[0]]==0):
-            break 
-    
-    #mostrar resultados
-    #dic=list(generacion_inicial)[0].mostrar(list(cursos_dispo.keys()))
-    #generar dataframe de salida
-    df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
-    print(df)
-    df.to_csv("Archivos de salida/salida.csv")
+    for j in range(int(poblacion)):  
+        list(cromosomas.keys())[j].mutacion( turnos)
 
+class Backend:
+    def inicializar(self, ruta_materias: str, ruta_profesores :str, poblacion: int, generaciones: int) -> pd.DataFrame:
+        """
+        Funcion que inicializa el programa
+        \nparametros: \n
+        ruta_materias: ruta del archivo csv de materias
+        ruta_profesores: ruta del archivo csv de profesores
+        \nregresa un dataframe con los cursos asignados por materia
+        \nregresa tambien dos flags de numeros enteros:\n
+            que indican si hay profesores suficientes\n 
+            y la finalizacion
+        """
+        materias = ingresar_cursos_desde_archivo( pd.read_csv(ruta_materias, encoding='latin-1'))
+        profesores = ingresar_profesores_desde_archivo(pd.read_csv(ruta_profesores, dtype={'Disponibilidad': str},encoding='latin-1'))
+        cursos_dispo=cursos_disponibles_posibles(profesores, materias)
+        generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
+        for i in range(generaciones):
+        
+            print(f"mejor fitness generacion:{i} ", generacion_inicial[list(generacion_inicial.keys())[0]])
+            #descendencia
+            descendencia_fitness=calcula_fitness_cromosomas(crossover(generacion_inicial))
+            #seleccion 
+            descendencia_fitness=seleccion(descendencia_fitness, len(list(descendencia_fitness.keys()))) 
+            #intercambio
+            generacion_inicial=descendencia_fitness 
+            #mutacion
+            mutaciones(generacion_inicial, poblacion)
+            #condicion de paro
+            if(generacion_inicial[list(generacion_inicial.keys())[0]]==0):
+                break 
+        
+        df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
+        print(df)
+        df.to_csv("Archivos de salida/salida.csv", encodiong='latin-1')
+        profes_insuficientes_flag=0
+        areas_profes_insuficientes=[]
+        for area in horas_dispo_area:
+            x=horas_dispo_area[area]/(materias_por_area[area]*cant_cursos_materia*4)
 
-    #medir la cantidad de horas disponibles por area
-    for curso in horas_dispo_area:
-        x=horas_dispo_area[curso]/(materias_por_area[curso]*cant_cursos_materia*4)
-        if x<1:
-            print("Profesores insuficientes para el area: ", curso)
-        else:
-            print("Todo bien ", curso)
+            if x<1:
+                print("Profesores insuficientes para el area: ", area)
+                areas_profes_insuficientes.append(area)
+                profes_insuficientes=1
+            else:
+                print("Todo bien ", area)
+
+        return df, 1, profes_insuficientes_flag, areas_profes_insuficientes
+    
+
 

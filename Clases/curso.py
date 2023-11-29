@@ -53,6 +53,13 @@ class Curso:
         turno: turno a cambiar tipo str (ejem: l-x 11-13)
         """
         self._turno=turno
+    def setSalon(self, salon):
+        """
+        Cambia el salon del curso\n
+        parametros:\n
+        salon: salon a cambiar tipo str (ejem: x004)
+        """
+        self._salon=salon
     #getters
 
     def getProfesor(self) -> pf:
