@@ -2,7 +2,10 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from ttkbootstrap.constants import *
 import ttkbootstrap as tb
+import pandas as pd
 
+x = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9, 14, 15]})
+y = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9, 14, 15],'D': ['a','b','c','d','e']})
 class Ventana_Secundaria:
     def __init__(self,ventana):
         self.root=ventana
@@ -10,42 +13,28 @@ class Ventana_Secundaria:
         self.nueva_ventana=tk.Toplevel(self.root)
         self.nueva_ventana.title("Propuesta de horario")
         self.nueva_ventana.resizable(0,0)
-
-        self.frame_mostrar_horario=tb.Frame(self.nueva_ventana,bootstyle="light")
-        self.frame_mostrar_horario.grid(padx=20,pady=20,row=0,column=0,columnspan=2)
-        self.etiqueta=tb.Label(self.frame_mostrar_horario,text="Horario propuesto",bootstyle="light-inverse").pack()
         self.nueva_ventana.protocol("WM_DELETE_WINDOW", self.bloquerCierre)
+        self.frame_busqueda=tb.Frame(self.nueva_ventana)
+        self.frame_busqueda.grid(row=1,column=2,padx=10,pady=10)
+        self.item_buscar=tk.StringVar()
 
-        self.tabla=ttk.Treeview(self.frame_mostrar_horario,columns=("Clave","NombreMateria","Profesor","L","M","I","J","V","Hora","Aula"), show="headings",bootstyle="secondary")
-        self.tabla.heading("Clave",text="Clave")
-        self.tabla.heading("NombreMateria",text="NombreMateria")
-        self.tabla.heading("Profesor",text="Profesor")
-        self.tabla.heading("L",text="L")
-        self.tabla.heading("M",text="M")
-        self.tabla.heading("I",text="I")
-        self.tabla.heading("J",text="J")
-        self.tabla.heading("V",text="V")
-        self.tabla.heading("Hora",text="Hora")
-        self.tabla.heading("Aula",text="Aula")
+        self.crear_tabla(self.nueva_ventana,x,"Horario propuesto")
 
-        self.tabla.column("Clave",width=100)
-        self.tabla.column("NombreMateria",width=200)
-        self.tabla.column("Profesor",width=150)
-        self.tabla.column("L",width=50)
-        self.tabla.column("M",width=50)
-        self.tabla.column("I",width=50)
-        self.tabla.column("J",width=50)
-        self.tabla.column("V",width=50)
-        self.tabla.column("Hora",width=70)
-        self.tabla.column("Aula",width=70)
+        self.boton_buscar=tb.Button(
+            self.frame_busqueda,
+            text="Buscar",
+            bootstyle="info",
+            command=self.buscar_item
+        ).pack(side="left")
 
-        self.barraVertical=ttk.Scrollbar(self.frame_mostrar_horario,orient="vertical",command=self.tabla.yview, bootstyle="dark-round")
-        self.barraVertical.pack(side="right",fill="y")
-        self.tabla.configure(yscrollcommand=self.barraVertical.set)
-        
-        self.cargar_datos_a_mostrar(self.tabla)
-        self.tabla.pack()
-        
+        self.entrada_busqueda=tb.Entry(
+            self.frame_busqueda,
+            width=20,
+            textvariable=self.item_buscar,
+            font=("Tahoma",10),
+            bootstyle="info",
+        ).pack(side="right",padx=10)
+
         self.boton_exportar_horario=tb.Button(
             self.nueva_ventana,
             text="Exportar horario",
@@ -57,36 +46,48 @@ class Ventana_Secundaria:
             bootstyle="info",
             command=self.regresar_ventana_principal
         ).grid(row=1,column=1,padx=10,pady=10)
-    def cargar_datos_a_mostrar(self,treeview):
-        datos=[("218602962","Analisis de Algoritmos","Jorge Ernesto","","1","","1","","7-9","X14"),
-               ("123456789", "Introducción a la Programación", "María González", "", "2", "", "3", "", "10-12", "X20"),
-                ("987654321", "Desarrollo Web Avanzado", "Carlos Rodríguez", "", "1", "", "2", "", "14-16", "Y05"),
-                ("111223344", "Estadística Aplicada", "Laura Pérez", "", "3", "", "2", "", "9-11", "Z10"),
-                ("555666777", "Diseño de Interfaces", "Juan García", "", "4", "", "1", "", "13-15", "W18"),
-                ("888999000", "Sistemas Operativos", "Roberto Martínez", "", "2", "", "4", "", "8-10", "V09"),
-                ("218602962","Analisis de Algoritmos","Jorge Ernesto","","1","","1","","7-9","X14"),
-               ("123456789", "Introducción a la Programación", "María González", "", "2", "", "3", "", "10-12", "X20"),
-                ("987654321", "Desarrollo Web Avanzado", "Carlos Rodríguez", "", "1", "", "2", "", "14-16", "Y05"),
-                ("111223344", "Estadística Aplicada", "Laura Pérez", "", "3", "", "2", "", "9-11", "Z10"),
-                ("555666777", "Diseño de Interfaces", "Juan García", "", "4", "", "1", "", "13-15", "W18"),
-                ("888999000", "Sistemas Operativos", "Roberto Martínez", "", "2", "", "4", "", "8-10", "V09"),
-               ("218602962","Analisis de Algoritmos","Jorge Ernesto","","1","","1","","7-9","X14"),
-               ("123456789", "Introducción a la Programación", "María González", "", "2", "", "3", "", "10-12", "X20"),
-                ("987654321", "Desarrollo Web Avanzado", "Carlos Rodríguez", "", "1", "", "2", "", "14-16", "Y05"),
-                ("111223344", "Estadística Aplicada", "Laura Pérez", "", "3", "", "2", "", "9-11", "Z10"),
-                ("555666777", "Diseño de Interfaces", "Juan García", "", "4", "", "1", "", "13-15", "W18"),
-                ("888999000", "Sistemas Operativos", "Roberto Martínez", "", "2", "", "4", "", "8-10", "V09"),
-                ("218602962","Analisis de Algoritmos","Jorge Ernesto","","1","","1","","7-9","X14"),
-               ("123456789", "Introducción a la Programación", "María González", "", "2", "", "3", "", "10-12", "X20"),
-                ("987654321", "Desarrollo Web Avanzado", "Carlos Rodríguez", "", "1", "", "2", "", "14-16", "Y05"),
-                ("111223344", "Estadística Aplicada", "Laura Pérez", "", "3", "", "2", "", "9-11", "Z10"),
-                ("555666777", "Diseño de Interfaces", "Juan García", "", "4", "", "1", "", "13-15", "W18"),
-                ("888999000", "Sistemas Operativos", "Roberto Martínez", "", "2", "", "4", "", "8-10", "V09"),
-               ]
+    
+    def cargar_datos_a_mostrar(self,treeview,dataframe):
+        columns=list(dataframe.columns)
         treeview.delete(*treeview.get_children())
         
-        for dato in datos:
-            treeview.insert("","end", values=dato)
+        for index, row in dataframe.iterrows():
+            treeview.insert("",index,values=list(row))
+    
+    def exportar_archivo(self):
+        print("Por definir")
+        
+    def buscar_item(self):
+        mostrar_busqueda=tk.Toplevel(self.nueva_ventana)
+        mostrar_busqueda.title("Materias encontradas")
+        mostrar_busqueda.resizable(0,0)
+        self.crear_tabla(mostrar_busqueda,y,"Resultado de la busqueda")
+
+    def crear_tabla(self,localizacion,datos,NombreTabla):
+        frame_mostrar_horario=tb.Frame(localizacion,bootstyle="light")
+        frame_mostrar_horario.grid(padx=20,pady=20,row=0,column=0,columnspan=3)
+        etiqueta=tb.Label(frame_mostrar_horario,text=NombreTabla,bootstyle="light-inverse").pack()
+        
+        tabla=ttk.Treeview(frame_mostrar_horario,columns=("NombreMateria","Curso","Profesor","Salon","Turno"), show="headings",bootstyle="secondary")
+        tabla.heading("NombreMateria",text="NombreMateria")
+        tabla.heading("Curso", text="Curso")
+        tabla.heading("Profesor",text="Profesor")
+        tabla.heading("Salon",text="Salon")
+        tabla.heading("Turno",text="Turno")
+
+        tabla.column("NombreMateria",width=250,anchor="center")
+        tabla.column("Curso",width=150,anchor="center")
+        tabla.column("Profesor",width=250,anchor="center")
+        tabla.column("Salon",width=70,anchor="center")
+        tabla.column("Turno",width=100,anchor="center")
+
+        barraVertical=ttk.Scrollbar(frame_mostrar_horario,orient="vertical",command=tabla.yview, bootstyle="dark-round")
+        barraVertical.pack(side="right",fill="y")
+        tabla.configure(yscrollcommand=barraVertical.set)
+        
+        self.cargar_datos_a_mostrar(tabla,datos)
+        tabla.pack()
+
 
     def bloquerCierre(self):
         messagebox.showerror("Error de ventana", message="Por favor presione el boton de regresar...")
