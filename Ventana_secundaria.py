@@ -6,8 +6,9 @@ import pandas as pd
 
 x = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9, 14, 15]})
 y = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9, 14, 15],'D': ['a','b','c','d','e']})
+
 class Ventana_Secundaria:
-    def __init__(self,ventana):
+    def __init__(self,ventana,data):
         self.root=ventana
         self.root.withdraw()
         self.nueva_ventana=tk.Toplevel(self.root)
@@ -17,8 +18,8 @@ class Ventana_Secundaria:
         self.frame_busqueda=tb.Frame(self.nueva_ventana)
         self.frame_busqueda.grid(row=1,column=2,padx=10,pady=10)
         self.item_buscar=tk.StringVar()
-
-        self.crear_tabla(self.nueva_ventana,x,"Horario propuesto")
+        self.datafr=data
+        self.crear_tabla(self.nueva_ventana,self.datafr,"Horario propuesto")
 
         self.boton_buscar=tb.Button(
             self.frame_busqueda,
@@ -39,6 +40,7 @@ class Ventana_Secundaria:
             self.nueva_ventana,
             text="Exportar horario",
             bootstyle="info",
+            command=self.exportar_archivo
         ).grid(row=1,column=0,padx=10,pady=10)
         self.boton_regresar=tb.Button(
             self.nueva_ventana,
@@ -55,13 +57,15 @@ class Ventana_Secundaria:
             treeview.insert("",index,values=list(row))
     
     def exportar_archivo(self):
-        print("Por definir")
-        
+        self.datafr.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
+        print("Exportado con exito")
+
     def buscar_item(self):
+        df_filtrado=self.datafr[(self.datafr['Materia']==self.item_buscar.get()) | (self.datafr['Curso']==self.item_buscar.get()) | (self.datafr['Profesor']==self.item_buscar.get()) | (self.datafr['Salon']==self.item_buscar.get()) | (self.datafr['Turno']==self.item_buscar.get())]
         mostrar_busqueda=tk.Toplevel(self.nueva_ventana)
         mostrar_busqueda.title("Materias encontradas")
         mostrar_busqueda.resizable(0,0)
-        self.crear_tabla(mostrar_busqueda,y,"Resultado de la busqueda")
+        self.crear_tabla(mostrar_busqueda,df_filtrado,"Resultado de la busqueda")
 
     def crear_tabla(self,localizacion,datos,NombreTabla):
         frame_mostrar_horario=tb.Frame(localizacion,bootstyle="light")
@@ -69,7 +73,7 @@ class Ventana_Secundaria:
         etiqueta=tb.Label(frame_mostrar_horario,text=NombreTabla,bootstyle="light-inverse").pack()
         
         tabla=ttk.Treeview(frame_mostrar_horario,columns=("NombreMateria","Curso","Profesor","Salon","Turno"), show="headings",bootstyle="secondary")
-        tabla.heading("NombreMateria",text="NombreMateria")
+        tabla.heading("NombreMateria",text="Materia")
         tabla.heading("Curso", text="Curso")
         tabla.heading("Profesor",text="Profesor")
         tabla.heading("Salon",text="Salon")
@@ -79,7 +83,7 @@ class Ventana_Secundaria:
         tabla.column("Curso",width=150,anchor="center")
         tabla.column("Profesor",width=250,anchor="center")
         tabla.column("Salon",width=70,anchor="center")
-        tabla.column("Turno",width=100,anchor="center")
+        tabla.column("Turno",width=150,anchor="center")
 
         barraVertical=ttk.Scrollbar(frame_mostrar_horario,orient="vertical",command=tabla.yview, bootstyle="dark-round")
         barraVertical.pack(side="right",fill="y")

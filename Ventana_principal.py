@@ -6,6 +6,7 @@ import ttkbootstrap as tb
 import tkinter as tk
 import Ventana_secundaria as ves
 import os
+from backend import Backend as bk
 
 #Intrucciones para dirigirnos al directorio del script que se esta ejecutando
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -44,7 +45,7 @@ class Ventana_Principal:
         self.generar_resultados=tb.Button(
             self.frame_cargar_datos,
             text="Generar",
-            state="normal",
+            state="disabled",
             command=self.generar,
             bootstyle="info"
         )
@@ -99,7 +100,7 @@ class Ventana_Principal:
         return entry
     
     #Se declara una funcion para cargar los archivos
-    def cargarArchivo(self,variableStringVar,ruta_archivo,):#Se establece un parametro para establecer el nombre de una unica variable y guardar la ruta de los archivos
+    def cargarArchivo(self,variableStringVar,ruta_archivo):#Se establece un parametro para establecer el nombre de una unica variable y guardar la ruta de los archivos
         direccion_archivo = filedialog.askopenfilename(filetypes=[("Archivos CSV", "*.csv")])#Encargada de abrir la ventana para seleccionar el archivo
         if direccion_archivo:
             rutas_archivos[ruta_archivo]=direccion_archivo
@@ -115,7 +116,10 @@ class Ventana_Principal:
     
     #Se agrego una funcion para crear la segunda interfaz
     def abrir_ventana_secundaria(self):
-        ventana_secu=ves.Ventana_Secundaria(self.ventana_raiz)
+        Messagebox.ok("Generando la tabla, por favor espera..."+
+                      "\nPresiona el boton 'ok' para comenzar...")
+        dataf,flag_finalizacion, flag_profes_insuficientes, lista_profes_insuficientes=bk.inicializar(1,rutas_archivos["cursos"],rutas_archivos["profesores"],1000,200)
+        ventana_secu=ves.Ventana_Secundaria(self.ventana_raiz,dataf)
     
     #Se creo una funcion que se encarga de verificar que si se hayan cargado archivos a la interfaz
     def verificar_ejecucion(self):
