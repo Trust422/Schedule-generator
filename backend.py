@@ -239,10 +239,6 @@ class Backend:
             #condicion de paro
             if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-2):
                 break 
-        while(generacion_inicial[list(generacion_inicial.keys())[0]]!=0):
-            generacion_inicial=calcula_fitness_cromosomas(crossover(generacion_inicial))
-            mutaciones(generacion_inicial, poblacion)
-            print(f"mejor fitness ", generacion_inicial[list(generacion_inicial.keys())[0]])
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
         print(df)
         #df.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
@@ -293,6 +289,3 @@ class Backend:
                 j+=1
                 k+=1
         return df
-
-
-#Backend().inicializar("Archivos de entrada/clases.csv", "Archivos de entrada/profesores.csv", 1000, 200)
