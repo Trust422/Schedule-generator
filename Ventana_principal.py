@@ -118,7 +118,7 @@ class Ventana_Principal:
     def abrir_ventana_secundaria(self):
         Messagebox.ok("Generando la tabla, por favor espera..."+
                       "\nPresiona el boton 'ok' para comenzar...")
-        dataf,flag_finalizacion, flag_profes_insuficientes, lista_profes_insuficientes=bk.inicializar(1,rutas_archivos["cursos"],rutas_archivos["profesores"],1000,200)
+        dataf,flag_finalizacion, flag_profes_insuficientes, lista_profes_insuficientes=bk.inicializar(1,rutas_archivos["cursos"],rutas_archivos["profesores"],800,500)
         ventana_secu=ves.Ventana_Secundaria(self.ventana_raiz,dataf,flag_profes_insuficientes,lista_profes_insuficientes)
     
     #Se creo una funcion que se encarga de verificar que si se hayan cargado archivos a la interfaz

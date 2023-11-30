@@ -26,6 +26,7 @@ class Ventana_Secundaria:
         if flagProfesores == 1:
             messagebox.showwarning("Profesores insuficientes","Advertencia"+
                                    f"\nAl parecer no existen los suficientes profesores para las siguientes areas:\n {self.extraer_areas}")
+            flagProfesores = 0
         self.boton_buscar=tb.Button(
             self.frame_busqueda,
             text="Buscar",

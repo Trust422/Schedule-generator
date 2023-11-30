@@ -224,6 +224,7 @@ class Backend:
         profesores = ingresar_profesores_desde_archivo(pd.read_csv(ruta_profesores, dtype={'Disponibilidad': str},encoding='latin-1'))
         cursos_dispo=cursos_disponibles_posibles(profesores, materias)
         generacion_inicial=inicializacion_AG(cursos_dispo, poblacion)
+        primer_fitness = generacion_inicial[list(generacion_inicial.keys())[0]]
         for i in range(generaciones):
         
             print(f"mejor fitness generacion:{i} ", generacion_inicial[list(generacion_inicial.keys())[0]])
@@ -238,6 +239,9 @@ class Backend:
             #condicion de paro
             if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-1):
                 break 
+
+            if (generacion_inicial[list(generacion_inicial.keys())[0]]==primer_fitness and i == 51):
+                break
         
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
         print(df)
