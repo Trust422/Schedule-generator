@@ -86,6 +86,7 @@ def generar_dataframe_salida(mejor_cromosoma: cr, cursos_dispo: dict[str, list[c
     """
     df=pd.DataFrame(columns=["Materia", "Curso", "Profesor", "Salon", "Turno"])
     for asignacion in mejor_cromosoma.asignaciones:
+        #df=df.concat([df, pd.DataFrame({"Materia": [asignacion.getMateria().getNombre()], "Curso": [asignacion.getNRC()], "Profesor": [asignacion.getProfesor().getNombre()], "Salon": [asignacion.getSalon()], "Turno": [asignacion.getTurno()]})], ignore_index=True)
         df=df._append({"Materia": asignacion.getMateria().getNombre(), "Curso": asignacion.getNRC(), "Profesor": asignacion.getProfesor().getNombre(), "Salon": asignacion.getSalon(), "Turno": asignacion.getTurno()}, ignore_index=True)
     return df
 
@@ -203,8 +204,8 @@ def mutaciones(cromosomas : dict[cr, int], poblacion: int):
     turnos: lista de turnos disponibles para asignar
     \n"""
 
-    for j in range(int(poblacion)):  
-        list(cromosomas.keys())[j].mutacion( turnos)
+    for j in range(int(poblacion*.01)):  
+        list(cromosomas.keys())[j].mutacion( salones)
 
 class Backend:
     def inicializar(self, ruta_materias: str, ruta_profesores :str, poblacion: int, generaciones: int) -> pd.DataFrame:
@@ -235,12 +236,12 @@ class Backend:
             #mutacion
             mutaciones(generacion_inicial, poblacion)
             #condicion de paro
-            if(generacion_inicial[list(generacion_inicial.keys())[0]]==0):
+            if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-1):
                 break 
         
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
         print(df)
-        
+        #df.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
         profes_insuficientes_flag=0
         areas_profes_insuficientes=[]
         for area in horas_dispo_area:
@@ -255,5 +256,38 @@ class Backend:
 
         return df, 1, profes_insuficientes_flag, areas_profes_insuficientes
     
+    
+        
+    def merge_sort_df_salon(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Funcion que ordena el dataframe por salon
+        \nparametros: \n
+        df: dataframe a ordenar
+        \nregresa un dataframe ordenado por salon
+        """
+        if len(df) >1: 
+            mid = len(df)//2
+            L = df[:mid]
+            R = df[mid:]
+            self.merge_sort_df_salon(L)
+            self.merge_sort_df_salon(R)
+            i = j = k = 0
+            while i < len(L) and j < len(R):
+                if L.iloc[i,3] < R.iloc[j,3]:
+                    df.iloc[k] = L.iloc[i]
+                    i+=1
+                else:
+                    df.iloc[k] = R.iloc[j]
+                    j+=1
+                k+=1
+            while i < len(L):
+                df.iloc[k] = L.iloc[i]
+                i+=1
+                k+=1
+            while j < len(R):
+                df.iloc[k] = R.iloc[j]
+                j+=1
+                k+=1
+        return df
 
-
+Backend().inicializar("Archivos de entrada/clases.csv", "Archivos de entrada/profesores.csv", 1000, 200)
