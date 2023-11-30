@@ -1,5 +1,22 @@
 import random
 
+turnos=[
+        "l-x 09-11", "l-x 11-13", "l-x 13-15", "l-x 15-17",
+        "m-j 09-11", "m-j 11-13", "m-j 13-15", "m-j 15-17",
+        "x-v 09-11", "x-v 11-13", "x-v 13-15", "x-v 15-17",
+        ] 
+info_turnos = {}
+for turno in turnos:
+    dias, horas = turno.split(" ")
+    dia_inicio, dia_fin = dias.split("-")
+    hora_inicio, hora_fin = horas.split("-")
+
+    info_turnos[turno]=({
+        "dia_inicio": dia_inicio,
+        "dia_fin": dia_fin,
+        "hora_inicio": hora_inicio,
+        "hora_fin": hora_fin,
+    })
 class Cromosoma:
     def __init__(self, cursos_disponibles, N):
         """
@@ -60,7 +77,7 @@ class Cromosoma:
         choques = 0
         for curso in self.asignaciones:
             salon = curso.getSalon()
-            turno = curso.getTurno()
+            turno = info_turnos[curso.getTurno()]["hora_inicio"]+"-"+info_turnos[curso.getTurno()]["hora_fin"]
             if turno not in choques_salon:
                 choques_salon[turno] = {}
 
@@ -76,7 +93,7 @@ class Cromosoma:
         regresa el numero de choques de profesores y salones\n
         """
         choques_p, _=self.contar_choques_prof()
-        choques_s, _=self.choques_salon()
+        choques_s, _=self.choques_salon_v2()
         fitness=choques_p + choques_s  
         return fitness
     def crossover(self, otro):
@@ -104,17 +121,61 @@ class Cromosoma:
         Parametros: \n
         turnos: lista de turnos disponibles para asignar\n
         """
-        _, choque_salon=self.choques_salon()
-
-        turno=random.choice(list(choque_salon.keys()))
-        llave=random.choice(list(choque_salon[turno].keys()))
-        curso=random.choice(choque_salon[turno][llave])
-        aula=curso.getSalon()
-        salon_random=random.choice(salones)
+        _, choque_salon=self.choques_salon_v2()
         
-        if(salon_random not in choque_salon[turno]):
-            curso.setSalon(salon_random)
+        dia=random.choice(list(choque_salon.keys()))
+        turno=random.choice(list(choque_salon[dia].keys()))
+        salon=random.choice(list(choque_salon[dia][turno].keys()))
+        curso=random.choice(choque_salon[dia][turno][salon])
+        aula=curso.getSalon()
+        index=salones.index(aula)
+        attempts=5
+        while attempts>0:
+            if index == len(salones)-1:
+                index=0
+            salon_random=salones[index+1]
+            if(salon_random not in choque_salon[dia][turno]):
+                curso.setSalon(salon_random)
+                return 
+            index+=1
+            attempts-=1
     
+    def choques_salon_v2(self):
+        """
+        Cuenta los choques de salon\n
+        Regresa un diccionario con los choques de salon por día tipo {dia: {turno: {salon: [cursos]}}}\n
+        y también regresa el número total de choques de salon\n
+        """
+        choques_salon = {dia: {} for dia in ["l", "m", "x", "j", "v"]}
+        choques = 0
+
+        for curso in self.asignaciones:
+            salon = curso.getSalon()
+            turno = info_turnos[curso.getTurno()]["hora_inicio"]+"-"+info_turnos[curso.getTurno()]["hora_fin"]
+            dia = info_turnos[curso.getTurno()]["dia_inicio"]
+            dia_2 = info_turnos[curso.getTurno()]["dia_fin"]
+            if turno not in choques_salon[dia]:
+                choques_salon[dia][turno] = {}
+
+            if turno not in choques_salon[dia_2]:
+                choques_salon[dia_2][turno] = {}
+
+
+            if salon in choques_salon[dia][turno]:
+                choques_salon[dia][turno][salon].append(curso)
+                choques += 1
+            else:
+                choques_salon[dia][turno][salon] = []
+                choques_salon[dia][turno][salon].append(curso)
+
+            if salon in choques_salon[dia_2][turno]:
+                choques_salon[dia_2][turno][salon].append(curso)
+                choques += 1
+            else:
+                choques_salon[dia_2][turno][salon] = []
+                choques_salon[dia_2][turno][salon].append(curso)
+
+        return choques, choques_salon
     def mostrar (self,lista_materia):
         """
         Funcion mostrar\n

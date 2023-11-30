@@ -203,10 +203,11 @@ def mutaciones(cromosomas : dict[cr, int], poblacion: int):
     poblacion: numero de cromosomas
     turnos: lista de turnos disponibles para asignar
     \n"""
-
-    for j in range(int(poblacion*.01)):  
-        list(cromosomas.keys())[j].mutacion( salones)
-
+    
+    seleccion_random=random.choices(list(cromosomas.keys())[int(len(list(cromosomas.keys())))-int((list(cromosomas.keys()))*10):len(list(cromosomas.keys()))], k=int(poblacion*.80))
+    for j in range(len(seleccion_random)):
+        seleccion_random[j].mutacion(salones) 
+    
 class Backend:
     def inicializar(self, ruta_materias: str, ruta_profesores :str, poblacion: int, generaciones: int) -> pd.DataFrame:
         """
@@ -233,11 +234,14 @@ class Backend:
             #intercambio
             generacion_inicial=descendencia_fitness 
             #mutacion
-            mutaciones(generacion_inicial, poblacion)
+            #mutaciones(generacion_inicial, poblacion)
             #condicion de paro
-            if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-1):
+            if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-2):
                 break 
-        
+        while(generacion_inicial[list(generacion_inicial.keys())[0]]!=0):
+            generacion_inicial=calcula_fitness_cromosomas(crossover(generacion_inicial))
+            mutaciones(generacion_inicial, poblacion)
+            print(f"mejor fitness ", generacion_inicial[list(generacion_inicial.keys())[0]])
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
         print(df)
         df.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
