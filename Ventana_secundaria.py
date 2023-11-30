@@ -8,7 +8,7 @@ x = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9
 y = pd.DataFrame({'A': [1, 2, 3, 10, 11,], 'B': [4, 5, 6, 12, 13], 'C': [7, 8, 9, 14, 15],'D': ['a','b','c','d','e']})
 
 class Ventana_Secundaria:
-    def __init__(self,ventana,data):
+    def __init__(self,ventana,data,flagProfesores,listaAreas):
         self.root=ventana
         self.root.withdraw()
         self.nueva_ventana=tk.Toplevel(self.root)
@@ -20,7 +20,12 @@ class Ventana_Secundaria:
         self.item_buscar=tk.StringVar()
         self.datafr=data
         self.crear_tabla(self.nueva_ventana,self.datafr,"Horario propuesto")
+        
+        self.list_areas=listaAreas
 
+        if flagProfesores == 1:
+            messagebox.showwarning("Profesores insuficientes","Advertencia"+
+                                   f"\nAl parecer no existen los suficientes profesores para las siguientes areas:\n {self.extraer_areas}")
         self.boton_buscar=tb.Button(
             self.frame_busqueda,
             text="Buscar",
@@ -48,6 +53,11 @@ class Ventana_Secundaria:
             bootstyle="info",
             command=self.regresar_ventana_principal
         ).grid(row=1,column=1,padx=10,pady=10)
+
+    def extraer_areas(self):
+        for i in self.list_areas:
+            messaje=i+"\n"
+        return messaje
     
     def cargar_datos_a_mostrar(self,treeview,dataframe):
         columns=list(dataframe.columns)
@@ -58,7 +68,7 @@ class Ventana_Secundaria:
     
     def exportar_archivo(self):
         self.datafr.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
-        print("Exportado con exito")
+        messagebox.showinfo("Exportacion","Se realizo la exportacion con exito")
 
     def buscar_item(self):
         df_filtrado=self.datafr[(self.datafr['Materia']==self.item_buscar.get()) | (self.datafr['Curso']==self.item_buscar.get()) | (self.datafr['Profesor']==self.item_buscar.get()) | (self.datafr['Salon']==self.item_buscar.get()) | (self.datafr['Turno']==self.item_buscar.get())]
