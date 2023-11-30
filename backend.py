@@ -289,3 +289,6 @@ class Backend:
                 j+=1
                 k+=1
         return df
+
+
+Backend().inicializar("Archivos de entrada/clases.csv", "Archivos de entrada/profesores.csv", 1000, 200)
