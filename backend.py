@@ -12,9 +12,9 @@ import pandas as pd
 cant_cursos_materia=2 #variable que define la cantidad de cursos por materia
 
 turnos=[
-        "l-x 09-11", "l-x 11-13", "l-x 13-15", "l-x 15-17",
-        "m-j 09-11", "m-j 11-13", "m-j 13-15", "m-j 15-17",
-        "x-v 09-11", "x-v 11-13", "x-v 13-15", "x-v 15-17",
+        "L-X 09:00-11:00", "L-X 11:00-13:00", "L-X 13:00-15:00", "L-X 15:00-17:00",
+        "M-J 09:00-11:00", "M-J 11:00-13:00", "M-J 13:00-15:00", "M-J 15:00-17:00",
+        "X-V 09:00-11:00", "X-V 11:00-13:00", "X-V 13:00-15:00", "X-V 15:00-17:00",
         ]  #111100001111000000000 #ejemplo de disponibilidad de un profesor 
 
 salones=[
@@ -220,6 +220,7 @@ class Backend:
             que indican si hay profesores suficientes\n 
             y la finalizacion
         """
+        print(ruta_materias+","+ruta_profesores+",",poblacion,",",generaciones)
         materias = ingresar_cursos_desde_archivo( pd.read_csv(ruta_materias, encoding='latin-1'))
         profesores = ingresar_profesores_desde_archivo(pd.read_csv(ruta_profesores, dtype={'Disponibilidad': str},encoding='latin-1'))
         cursos_dispo=cursos_disponibles_posibles(profesores, materias)
@@ -244,7 +245,7 @@ class Backend:
             print(f"mejor fitness ", generacion_inicial[list(generacion_inicial.keys())[0]])
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)
         print(df)
-        df.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
+        #df.to_csv("Archivos de salida/salida.csv", encoding='latin-1')
         profes_insuficientes_flag=0
         areas_profes_insuficientes=[]
         for area in horas_dispo_area:
@@ -253,7 +254,7 @@ class Backend:
             if x<1:
                 print("Profesores insuficientes para el area: ", area)
                 areas_profes_insuficientes.append(area)
-                profes_insuficientes=1
+                profes_insuficientes_flag=1
             else:
                 print("Todo bien ", area)
 
@@ -293,4 +294,5 @@ class Backend:
                 k+=1
         return df
 
-Backend().inicializar("Archivos de entrada/clases.csv", "Archivos de entrada/profesores.csv", 1000, 200)
+
+#Backend().inicializar("Archivos de entrada/clases.csv", "Archivos de entrada/profesores.csv", 1000, 200)
