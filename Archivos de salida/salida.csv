@@ -1,0 +1,121 @@
+,Materia,Curso,Profesor,Salon,Turno
+0,Fundamentos de programacion,I528808xv1113,Zoila Liliana Herrera Lucan,x013,x-v 11-13
+1,Fundamentos de programacion,I528817lx1315,Veronica Camacho Santillan,x003,l-x 13-15
+2,Programacion estructurada,IL35202lx1113,Erasmo Antonio Rodriguez,x016,l-x 11-13
+3,Programacion estructurada,IL35220mj1517,Sabrina Lizbeth Vega Maldonado,x009,m-j 15-17
+4,Programacion orientada a objetos,I528909mj1315,Jose Ruben Maldonado Mercado,x013,m-j 13-15
+5,Programacion orientada a objetos,I528911mj1113,Ramiro Lupercio Coronel,x001,m-j 11-13
+6,Estructura de datos,IL35410lx0911,Luis Felipe Mariscal Lugo,x006,l-x 09-11
+7,Estructura de datos,IL35418mj1113,Martha Del Carmen Gutierrez Salmeron,x009,m-j 11-13
+8,Programacion para internet,IL36210mj1315,Luis Felipe Mariscal Lugo,x011,m-j 13-15
+9,Programacion para internet,IL36219mj1517,Adriana Pena Perez,x011,m-j 15-17
+10,Analisis de algoritmos,IL35515xv1315,Zoila Liliana Herrera Lucan,x004,x-v 13-15
+11,Analisis de algoritmos,IL35504lx1113,Sabrina Lizbeth Vega Maldonado,x019,l-x 11-13
+12,Bases de datos,IL35615xv0911,Adriana Pena Perez,x011,x-v 09-11
+13,Bases de datos,IL35606mj1113,Oscar Eduardo Maciel Castillo,x006,m-j 11-13
+14,Redes de computadoras,IL36418xv1517,Sanchez Santoyo Alejandra,x004,x-v 15-17
+15,Redes de computadoras,IL36415mj1113,Thelma Isabel Morales Ramirez,x017,m-j 11-13
+16,Sistemas operativos,IL36606lx0911,Alfredo Gutierrez,x015,l-x 09-11
+17,Sistemas operativos,IL36606lx1517,Noe Ortega Sanchez,x017,l-x 15-17
+18,Interaccion Humano Computadora,IL36702lx1315,Zoila Liliana Herrera Lucan,x015,l-x 13-15
+19,Interaccion Humano Computadora,IL36717mj1315,Conrado Cruz Gomez,x018,m-j 13-15
+20,Ingenieria de Software,CB22409xv1517,Ramiro Lupercio Coronel,x014,x-v 15-17
+21,Ingenieria de Software,CB22410mj0911,Arturo Valdivia Gonzalez,x006,m-j 09-11
+22,Programacion de Bajo Nivel,IL35820lx0911,Oscar Eduardo Maciel Castillo,x012,l-x 09-11
+23,Programacion de Bajo Nivel,IL35803mj1113,Arturo Valdivia Gonzalez,x013,m-j 11-13
+24,Teoria de la computacion,IL35710lx1517,Luis Felipe Mariscal Lugo,x007,l-x 15-17
+25,Teoria de la computacion,IL35712lx1315,Oscar Eduardo Maciel Castillo,x006,l-x 13-15
+26,Laboratorio Abierto: Disenio,IL37215lx0911,Angel Tonatiuh Hernandez Casas,x010,l-x 09-11
+27,Laboratorio Abierto: Disenio,IL37210xv0911,Zoila Liliana Herrera Lucan,x012,x-v 09-11
+28,Laboratorio Abierto: Construccion,IL37302mj1315,Zoila Liliana Herrera Lucan,x015,m-j 13-15
+29,Laboratorio Abierto: Construccion,IL37304mj1113,Martha Del Carmen Gutierrez Salmeron,x012,m-j 11-13
+30,Laboratorio Abierto: Prueba,IL37407xv0911,Conrado Cruz Gomez,x019,x-v 09-11
+31,Laboratorio Abierto: Prueba,IL37410xv1315,Arturo Valdivia Gonzalez,x006,x-v 13-15
+32,Compiladores,IL35914xv0911,Leopoldo Morales Gonzalez,x016,x-v 09-11
+33,Compiladores,IL35915mj1315,Leopoldo Morales Gonzalez,x014,m-j 13-15
+34,Programacion paralela y concurrente,IL36008xv1517,Arturo Valdivia Gonzalez,x008,x-v 15-17
+35,Programacion paralela y concurrente,IL36009mj0911,Angel Tonatiuh Hernandez Casas,x017,m-j 09-11
+36,Seguridad de la informacion,IL36803lx1113,Eduardo Rangel Heras,x017,l-x 11-13
+37,Seguridad de la informacion,IL36802mj1517,Erasmo Martinez Soltero,x008,m-j 15-17
+38,Informatica administrativa,V073018lx0911,Jose Ruben Maldonado Mercado,x001,l-x 09-11
+39,Informatica administrativa,V073004mj1315,Adriana Pena Perez,x003,m-j 13-15
+40,Calidad de software,V073215mj0911,Ramiro Lupercio Coronel,x015,m-j 09-11
+41,Calidad de software,V073218lx1315,Angel Tonatiuh Hernandez Casas,x009,l-x 13-15
+42,Administracion de bases de datos,V072408lx1517,Sabrina Lizbeth Vega Maldonado,x001,l-x 15-17
+43,Administracion de bases de datos,V072415lx1113,Alfredo Gutierrez,x020,l-x 11-13
+44,Computacion cuantica ,V073713mj1113,Conrado Cruz Gomez,x014,m-j 11-13
+45,Computacion cuantica ,V073720lx1517,Angel Tonatiuh Hernandez Casas,x011,l-x 15-17
+46,Internet de las cosas,V074818lx1113,Beatriz Adriana Rivera Aguilar,x014,l-x 11-13
+47,Internet de las cosas,V074808mj1315,Carlos Dario Arenas Yerena,x016,m-j 13-15
+48,Desarrollo de paginas web en la nube y moviles,V074919lx1113,Jose Ruben Maldonado Mercado,x015,l-x 11-13
+49,Desarrollo de paginas web en la nube y moviles,V074901xv1315,Sanchez Santoyo Alejandra,x016,x-v 13-15
+50,Fundamentos de IA,IL36107mj0911,Jorge De Jesus Galvez Rodriguez,x008,m-j 09-11
+51,Fundamentos de IA,IL36113mj1113,Jorge Daniel Rios Arrañaga,x020,m-j 11-13
+52,Algoritmos metaheuristicos,V072607mj1517,Jorge De Jesus Galvez Rodriguez,x005,m-j 15-17
+53,Algoritmos metaheuristicos,V072613lx1113,Jorge Daniel Rios Arrañaga,x002,l-x 11-13
+54,Sistemas Inteligentes,V073412xv1315,Carlos Alberto Villaseñor Padilla,x010,x-v 13-15
+55,Sistemas Inteligentes,V073418mj0911,Jorge Daniel Rios Arrañaga,x002,m-j 09-11
+56,Tecnologias de Inteligencia Artificial,V072814xv1517,Carlos Alberto Villaseñor Padilla,x015,x-v 15-17
+57,Tecnologias de Inteligencia Artificial,V072803mj0911,Carlos Alberto Villaseñor Padilla,x009,m-j 09-11
+58,Circuitos Electronicos y electromagnetismo,IL34618xv1315,Sergio Ramon Itsuo Higashi Minami,x015,x-v 13-15
+59,Circuitos Electronicos y electromagnetismo,IL34615mj0911,Sergio Ramon Itsuo Higashi Minami,x020,m-j 09-11
+60,Sistemas digitales,IL36318xv1517,Sergio Ramon Itsuo Higashi Minami,x005,x-v 15-17
+61,Sistemas digitales,IL36302xv0911,Sergio Ramon Itsuo Higashi Minami,x008,x-v 09-11
+62,Arquitectura de computadoras,IL36505lx1113,Jorge Ernesto Lopez Arce Delgado,x006,l-x 11-13
+63,Arquitectura de computadoras,IL36511lx1113,Agustin Santiago Medina Vazquez,x013,l-x 11-13
+64,Logica matematica,I524717lx1315,Norma Elva Espino Rojas,x013,l-x 13-15
+65,Logica matematica,I524708lx1517,Jose Solis Rodriguez,x015,l-x 15-17
+66,Precalculo,IG73814mj1517,Jose Luis Netzahualcoyotl,x013,m-j 15-17
+67,Precalculo,IG73820lx1315,Jorge Luis Rodriguez Gutierrez,x005,l-x 13-15
+68,Matematicas discretas,IL34502mj0911,Maritza Elizabeth Lopez Alcala,x007,m-j 09-11
+69,Matematicas discretas,IL34501xv1517,Jose Luis Netzahualcoyotl,x010,x-v 15-17
+70,Calculo diferencial e integral,IL34412mj1315,Jorge Luis Rodriguez Gutierrez,x019,m-j 13-15
+71,Calculo diferencial e integral,IL34413xv0911,Miriam Ileana Flores Sandoval,x004,x-v 09-11
+72,Algebra lineal,IB05603lx1517,Maritza Elizabeth Lopez Alcala,x012,l-x 15-17
+73,Algebra lineal,IB05611lx1315,Maritza Elizabeth Lopez Alcala,x011,l-x 13-15
+74,Ecuaciones diferenciales,IL34711mj1315,Elba Lilia De La Cruz Garcia,x010,m-j 13-15
+75,Ecuaciones diferenciales,IL34713lx0911,Miriam Ileana Flores Sandoval,x011,l-x 09-11
+76,Probabilidad y estadistica,IB06718xv1113,Miriam Ileana Flores Sandoval,x016,x-v 11-13
+77,Probabilidad y estadistica,IB06711lx1517,Miriam Ileana Flores Sandoval,x004,l-x 15-17
+78,Metodos numericos,IL34814mj1517,Elba Lilia De La Cruz Garcia,x018,m-j 15-17
+79,Metodos numericos,IL34803mj0911,Jorge Luis Rodriguez Gutierrez,x011,m-j 09-11
+80,Introduccion a la ingenieria,IL34216lx0911,Jose Luis Guerrero Contreras,x016,l-x 09-11
+81,Introduccion a la ingenieria,IL34217mj0911,Dulce Angelica Valdivia Chavez,x013,m-j 09-11
+82,Administracionn de proyectos tecnologicos,IL35307lx1517,Dulce Angelica Valdivia Chavez,x019,l-x 15-17
+83,Administracionn de proyectos tecnologicos,IL35319lx1315,Dulce Angelica Valdivia Chavez,x014,l-x 13-15
+84,Liderazgo y emprendimiento,IL35009lx1517,Jesus Alvarez Arellano,x009,l-x 15-17
+85,Liderazgo y emprendimiento,IL35011mj1517,Adriana Liset Lopez Franco,x012,m-j 15-17
+86,Innovacion y tecnologia,IL35115lx1113,Hector Alejandro Galvez Lopez,x008,l-x 11-13
+87,Innovacion y tecnologia,IL35120lx0911,Hector Alejandro Galvez Lopez,x019,l-x 09-11
+88,Seminario de Integracion Protocolo,IL36904mj1517,Ruben Adrian Gil Rivera,x020,m-j 15-17
+89,Seminario de Integracion Protocolo,IL36911xv1113,Adriana Liset Lopez Franco,x002,x-v 11-13
+90,Seminario de Integracion Desarrollo,IL37018mj1517,Dulce Angelica Valdivia Chavez,x001,m-j 15-17
+91,Seminario de Integracion Desarrollo,IL37019xv1315,Roman Torres Aceves,x018,x-v 13-15
+92,Seminario de Integracion Comunicacion,IL37115xv1517,Hector Alejandro Galvez Lopez,x016,x-v 15-17
+93,Seminario de Integracion Comunicacion,IL37113mj1315,Adriana Liset Lopez Franco,x001,m-j 13-15
+94,Ingenieria y sustentabilidad ,V071717lx1517,Roman Torres Aceves,x008,l-x 15-17
+95,Ingenieria y sustentabilidad ,V071709lx1113,Jose Luis Guerrero Contreras,x010,l-x 11-13
+96,Innovacion tecnologica y emprendimiento,V071909mj1113,Rocio Del Carmen Morgan Franco,x004,m-j 11-13
+97,Innovacion tecnologica y emprendimiento,V071915xv0911,Adriana Liset Lopez Franco,x003,x-v 09-11
+98,Control de Proyectos,V072720lx0911,Rocio Del Carmen Morgan Franco,x003,l-x 09-11
+99,Control de Proyectos,V072710lx1315,Roman Torres Aceves,x007,l-x 13-15
+100,Induccion a la ingenieria,V070908lx1315,Hector Alejandro Galvez Lopez,x016,l-x 13-15
+101,Induccion a la ingenieria,V070910xv1517,Roman Torres Aceves,x007,x-v 15-17
+102,Fundamentos de fisica,IL34008lx0911,Liliana Vazquez Mercado,x018,l-x 09-11
+103,Fundamentos de fisica,IL34014lx0911,Susana Munoz Villegas,x005,l-x 09-11
+104,mecanica,IL34303mj1315,Carlos Daniel Vazquez Inzunza,x008,m-j 13-15
+105,mecanica,IL34312mj1517,Susana Munoz Villegas,x002,m-j 15-17
+106,Fisica cuantica,V073606mj0911,Susana Munoz Villegas,x003,m-j 09-11
+107,Fisica cuantica,V073605mj1517,Liliana Vazquez Mercado,x017,m-j 15-17
+108,Modelado cuantico,V073820lx1517,Susana Munoz Villegas,x010,l-x 15-17
+109,Modelado cuantico,V073807xv1315,Diego Fernando Mulato Gomez,x009,x-v 13-15
+110,Mineria de datos,CU20719lx0911,Carlos Alberto Guzman Montes,x002,l-x 09-11
+111,Mineria de datos,CU20720lx1113,Carlos Alberto Guzman Montes,x011,l-x 11-13
+112,Computacion en frontera,V075019mj0911,Luis Antonio Medellin Serna,x004,m-j 09-11
+113,Computacion en frontera,V075005mj1113,Emmanuel Franco Lopez Velarde,x010,m-j 11-13
+114,Analisis forense digital,V074118xv0911,Luis Antonio Medellin Serna,x009,x-v 09-11
+115,Analisis forense digital,V074104mj1315,Alma Gloria Vazquez Mares,x017,m-j 13-15
+116,Seguridad defensiva y gestion,V074020xv0911,Ana Jazmin Guerrero Campos,x014,x-v 09-11
+117,Seguridad defensiva y gestion,V074008mj0911,Ana Jazmin Guerrero Campos,x010,m-j 09-11
+118,Seguridad en redes,V073911xv1113,Ana Jazmin Guerrero Campos,x008,x-v 11-13
+119,Seguridad en redes,V073910mj1113,Carlos Alberto Guzman Montes,x016,m-j 11-13

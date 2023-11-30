@@ -94,7 +94,7 @@ class Cromosoma:
         hijo2.asignaciones=otro.asignaciones[:corte] + self.asignaciones[corte:] 
         return hijo1, hijo2
 
-    def mutacion(self, turnos):
+    def mutacion(self, salones):
         """
         FUNCION MUTACION\n
         recibe una lista de turnos\n
@@ -109,9 +109,11 @@ class Cromosoma:
         turno=random.choice(list(choque_salon.keys()))
         llave=random.choice(list(choque_salon[turno].keys()))
         curso=random.choice(choque_salon[turno][llave])
-        turno_random=random.choice(turnos)
-        if(curso.getProfesor().getDisponibilidad()[turnos.index(turno)] == "1" and curso.getProfesor().getDisponibilidad()[turnos.index(turno)+8] == "1"):
-            curso.setTurno(turno_random)
+        aula=curso.getSalon()
+        salon_random=random.choice(salones)
+        
+        if(salon_random not in choque_salon[turno]):
+            curso.setSalon(salon_random)
     
     def mostrar (self,lista_materia):
         """
