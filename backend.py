@@ -240,7 +240,7 @@ class Backend:
             if(generacion_inicial[list(generacion_inicial.keys())[0]]==0 or i==generaciones-1):
                 break 
 
-            if (generacion_inicial[list(generacion_inicial.keys())[0]]==primer_fitness and i == 51):
+            if ((generacion_inicial[list(generacion_inicial.keys())[0]]==primer_fitness) and (i == 70)):
                 break
         
         df=generar_dataframe_salida(list(generacion_inicial)[0], cursos_dispo)

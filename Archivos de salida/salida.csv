@@ -1,121 +1,121 @@
 ,Materia,Curso,Profesor,Salon,Turno
-0,Fundamentos de programacion,I528817LX1100,Sabrina Lizbeth Vega Maldonado,x018,L-X 11:00-13:00
-1,Fundamentos de programacion,I528817MJ1500,Thelma Isabel Morales Ramirez,x005,M-J 15:00-17:00
-2,Programacion estructurada,IL35216MJ1300,Erasmo Martinez Soltero,x013,M-J 13:00-15:00
-3,Programacion estructurada,IL35205MJ1300,Carlos Dario Arenas Yerena,x005,M-J 13:00-15:00
-4,Programacion orientada a objetos,I528908MJ1300,Erasmo Antonio Rodriguez,x008,M-J 13:00-15:00
-5,Programacion orientada a objetos,I528907LX1100,Ramiro Lupercio Coronel,x016,L-X 11:00-13:00
-6,Estructura de datos,IL35414MJ1100,Arturo Valdivia Gonzalez,x005,M-J 11:00-13:00
-7,Estructura de datos,IL35405LX1100,Angel Tonatiuh Hernandez Casas,x005,L-X 11:00-13:00
-8,Programacion para internet,IL36207MJ0900,Beatriz Adriana Rivera Aguilar,x007,M-J 09:00-11:00
-9,Programacion para internet,IL36215LX0900,Angel Tonatiuh Hernandez Casas,x015,L-X 09:00-11:00
-10,Analisis de algoritmos,IL35520MJ0900,Angel Tonatiuh Hernandez Casas,x017,M-J 09:00-11:00
-11,Analisis de algoritmos,IL35517LX1500,Luis Alberto Munoz Gomez,x017,L-X 15:00-17:00
-12,Bases de datos,IL35619MJ1500,Adriana Pena Perez,x004,M-J 15:00-17:00
-13,Bases de datos,IL35605XV1100,Adriana Pena Perez,x018,X-V 11:00-13:00
-14,Redes de computadoras,IL36405XV1500,Adriana Pena Perez,x017,X-V 15:00-17:00
-15,Redes de computadoras,IL36403MJ0900,Eduardo Rangel Heras,x003,M-J 09:00-11:00
-16,Sistemas operativos,IL36609MJ0900,Conrado Cruz Gomez,x009,M-J 09:00-11:00
-17,Sistemas operativos,IL36611XV1500,Zoila Liliana Herrera Lucan,x005,X-V 15:00-17:00
-18,Interaccion Humano Computadora,IL36713LX1500,Luis Felipe Mariscal Lugo,x013,L-X 15:00-17:00
-19,Interaccion Humano Computadora,IL36717XV1500,Carolina Elizabeth Gomez Marquez,x003,X-V 15:00-17:00
-20,Ingenieria de Software,CB22419MJ1100,Zoila Liliana Herrera Lucan,x018,M-J 11:00-13:00
-21,Ingenieria de Software,CB22408MJ0900,Alfredo Gutierrez,x010,M-J 09:00-11:00
-22,Programacion de Bajo Nivel,IL35804MJ1100,Jose Ruben Maldonado Mercado,x004,M-J 11:00-13:00
-23,Programacion de Bajo Nivel,IL35803MJ1300,Sabrina Lizbeth Vega Maldonado,x003,M-J 13:00-15:00
-24,Teoria de la computacion,IL35703LX1500,Alfredo Gutierrez,x008,L-X 15:00-17:00
-25,Teoria de la computacion,IL35712MJ1300,Sanchez Santoyo Alejandra,x012,M-J 13:00-15:00
-26,Laboratorio Abierto: Disenio,IL37219MJ1500,Erasmo Antonio Rodriguez,x009,M-J 15:00-17:00
-27,Laboratorio Abierto: Disenio,IL37215MJ1100,Beatriz Adriana Rivera Aguilar,x010,M-J 11:00-13:00
-28,Laboratorio Abierto: Construccion,IL37318MJ1300,Luis Felipe Mariscal Lugo,x018,M-J 13:00-15:00
-29,Laboratorio Abierto: Construccion,IL37309LX1500,Jose Ruben Maldonado Mercado,x009,L-X 15:00-17:00
-30,Laboratorio Abierto: Prueba,IL37412LX1500,Beatriz Adriana Rivera Aguilar,x015,L-X 15:00-17:00
-31,Laboratorio Abierto: Prueba,IL37410XV0900,Zoila Liliana Herrera Lucan,x012,X-V 09:00-11:00
-32,Compiladores,IL35910LX0900,Luis Felipe Mariscal Lugo,x016,L-X 09:00-11:00
-33,Compiladores,IL35903LX1300,Oscar Eduardo Maciel Castillo,x020,L-X 13:00-15:00
-34,Programacion paralela y concurrente,IL36009LX0900,Beatriz Adriana Rivera Aguilar,x009,L-X 09:00-11:00
-35,Programacion paralela y concurrente,IL36001LX1300,Zoila Liliana Herrera Lucan,x001,L-X 13:00-15:00
-36,Seguridad de la informacion,IL36804XV1300,Arturo Valdivia Gonzalez,x014,X-V 13:00-15:00
-37,Seguridad de la informacion,IL36804LX1300,Beatriz Adriana Rivera Aguilar,x004,L-X 13:00-15:00
-38,Informatica administrativa,V073005LX0900,Veronica Camacho Santillan,x006,L-X 09:00-11:00
-39,Informatica administrativa,V073013MJ1100,Carlos Dario Arenas Yerena,x006,M-J 11:00-13:00
-40,Calidad de software,V073220MJ1300,Zoila Liliana Herrera Lucan,x015,M-J 13:00-15:00
-41,Calidad de software,V073220XV1100,Zoila Liliana Herrera Lucan,x008,X-V 11:00-13:00
-42,Administracion de bases de datos,V072405LX1300,Sabrina Lizbeth Vega Maldonado,x002,L-X 13:00-15:00
-43,Administracion de bases de datos,V072414LX1100,Alfredo Gutierrez,x014,L-X 11:00-13:00
-44,Computacion cuantica ,V073705MJ1100,Ramiro Lupercio Coronel,x011,M-J 11:00-13:00
-45,Computacion cuantica ,V073708LX0900,Jose Ruben Maldonado Mercado,x008,L-X 09:00-11:00
-46,Internet de las cosas,V074810XV1300,Ramiro Lupercio Coronel,x017,X-V 13:00-15:00
-47,Internet de las cosas,V074818XV0900,Luis Felipe Mariscal Lugo,x018,X-V 09:00-11:00
-48,Desarrollo de paginas web en la nube y moviles,V074901XV1300,Carolina Elizabeth Gomez Marquez,x018,X-V 13:00-15:00
-49,Desarrollo de paginas web en la nube y moviles,V074903LX0900,Eduardo Rangel Heras,x003,L-X 09:00-11:00
-50,Fundamentos de IA,IL36114MJ1300,Miguel Angel Alejandro Islas Toski,x020,M-J 13:00-15:00
-51,Fundamentos de IA,IL36116MJ1100,Carlos Alberto Villaseñor Padilla,x019,M-J 11:00-13:00
-52,Algoritmos metaheuristicos,V072612LX1300,Miguel Angel Alejandro Islas Toski,x012,L-X 13:00-15:00
-53,Algoritmos metaheuristicos,V072619MJ0900,Jorge De Jesus Galvez Rodriguez,x019,M-J 09:00-11:00
-54,Sistemas Inteligentes,V073418MJ1500,Carlos Alberto Villaseñor Padilla,x010,M-J 15:00-17:00
-55,Sistemas Inteligentes,V073406MJ1300,Jorge De Jesus Galvez Rodriguez,x006,M-J 13:00-15:00
-56,Tecnologias de Inteligencia Artificial,V072807XV1500,Carlos Alberto Villaseñor Padilla,x013,X-V 15:00-17:00
-57,Tecnologias de Inteligencia Artificial,V072810MJ1500,Miguel Angel Alejandro Islas Toski,x008,M-J 15:00-17:00
-58,Circuitos Electronicos y electromagnetismo,IL34612LX0900,Agustin Santiago Medina Vazquez,x012,L-X 09:00-11:00
-59,Circuitos Electronicos y electromagnetismo,IL34608LX1100,Agustin Santiago Medina Vazquez,x008,L-X 11:00-13:00
-60,Sistemas digitales,IL36317XV1300,Sergio Ramon Itsuo Higashi Minami,x004,X-V 13:00-15:00
-61,Sistemas digitales,IL36314XV0900,Sergio Ramon Itsuo Higashi Minami,x007,X-V 09:00-11:00
-62,Arquitectura de computadoras,IL36502XV1100,Sergio Ramon Itsuo Higashi Minami,x015,X-V 11:00-13:00
-63,Arquitectura de computadoras,IL36501MJ1100,Rodrigo Antonio Campos Villarreal,x003,M-J 11:00-13:00
-64,Logica matematica,I524718LX1500,Maritza Elizabeth Lopez Alcala,x018,L-X 15:00-17:00
-65,Logica matematica,I524703XV1500,Miriam Ileana Flores Sandoval,x015,X-V 15:00-17:00
-66,Precalculo,IG73820MJ1100,Sara Edith Villalobos Jimenez,x020,M-J 11:00-13:00
-67,Precalculo,IG73810LX1300,Jorge Luis Rodriguez Gutierrez,x010,L-X 13:00-15:00
-68,Matematicas discretas,IL34505LX0900,Norma Elva Espino Rojas,x005,L-X 09:00-11:00
-69,Matematicas discretas,IL34519MJ1300,Elba Lilia De La Cruz Garcia,x019,M-J 13:00-15:00
-70,Calculo diferencial e integral,IL34414XV0900,Miriam Ileana Flores Sandoval,x006,X-V 09:00-11:00
-71,Calculo diferencial e integral,IL34406MJ1500,Sara Edith Villalobos Jimenez,x006,M-J 15:00-17:00
-72,Algebra lineal,IB05613MJ1500,Jose Luis Netzahualcoyotl,x020,M-J 15:00-17:00
-73,Algebra lineal,IB05611LX1300,Jose Solis Rodriguez,x003,L-X 13:00-15:00
-74,Ecuaciones diferenciales,IL34717LX0900,Miriam Ileana Flores Sandoval,x017,L-X 09:00-11:00
-75,Ecuaciones diferenciales,IL34706MJ1100,Elba Lilia De La Cruz Garcia,x001,M-J 11:00-13:00
-76,Probabilidad y estadistica,IB06708XV1100,Jose Luis Netzahualcoyotl,x013,X-V 11:00-13:00
-77,Probabilidad y estadistica,IB06706MJ0900,Jorge Luis Rodriguez Gutierrez,x006,M-J 09:00-11:00
-78,Metodos numericos,IL34818XV1500,Jose Luis Netzahualcoyotl,x014,X-V 15:00-17:00
-79,Metodos numericos,IL34802MJ1500,Elba Lilia De La Cruz Garcia,x007,M-J 15:00-17:00
-80,Introduccion a la ingenieria,IL34203XV0900,Adriana Liset Lopez Franco,x003,X-V 09:00-11:00
-81,Introduccion a la ingenieria,IL34203XV1300,Adriana Liset Lopez Franco,x007,X-V 13:00-15:00
-82,Administracionn de proyectos tecnologicos,IL35305MJ0900,Jose Luis Guerrero Contreras,x005,M-J 09:00-11:00
-83,Administracionn de proyectos tecnologicos,IL35306MJ1500,Dulce Angelica Valdivia Chavez,x001,M-J 15:00-17:00
-84,Liderazgo y emprendimiento,IL35006LX1300,Rocio Del Carmen Morgan Franco,x006,L-X 13:00-15:00
-85,Liderazgo y emprendimiento,IL35005LX1500,Rocio Del Carmen Morgan Franco,x005,L-X 15:00-17:00
-86,Innovacion y tecnologia,IL35102LX1100,Jose Luis Guerrero Contreras,x020,L-X 11:00-13:00
-87,Innovacion y tecnologia,IL35106MJ0900,Dulce Angelica Valdivia Chavez,x020,M-J 09:00-11:00
-88,Seminario de Integracion Protocolo,IL36904MJ0900,Roman Torres Aceves,x004,M-J 09:00-11:00
-89,Seminario de Integracion Protocolo,IL36903LX1300,Dulce Angelica Valdivia Chavez,x014,L-X 13:00-15:00
-90,Seminario de Integracion Desarrollo,IL37009MJ1300,Ruben Adrian Gil Rivera,x009,M-J 13:00-15:00
-91,Seminario de Integracion Desarrollo,IL37019XV1500,Hector Alejandro Galvez Lopez,x016,X-V 15:00-17:00
-92,Seminario de Integracion Comunicacion,IL37114LX1100,Jesus Alvarez Arellano,x003,L-X 11:00-13:00
-93,Seminario de Integracion Comunicacion,IL37118LX1300,Roman Torres Aceves,x007,L-X 13:00-15:00
-94,Ingenieria y sustentabilidad ,V071702LX1500,Dulce Angelica Valdivia Chavez,x020,L-X 15:00-17:00
-95,Ingenieria y sustentabilidad ,V071711MJ1100,Jose Luis Guerrero Contreras,x002,M-J 11:00-13:00
-96,Innovacion tecnologica y emprendimiento,V071919LX1100,Rocio Del Carmen Morgan Franco,x019,L-X 11:00-13:00
-97,Innovacion tecnologica y emprendimiento,V071904MJ1300,Hector Alejandro Galvez Lopez,x004,M-J 13:00-15:00
-98,Control de Proyectos,V072701MJ0900,Adriana Liset Lopez Franco,x018,M-J 09:00-11:00
-99,Control de Proyectos,V072720LX0900,Rocio Del Carmen Morgan Franco,x020,L-X 09:00-11:00
-100,Induccion a la ingenieria,V070903MJ1500,Roman Torres Aceves,x003,M-J 15:00-17:00
-101,Induccion a la ingenieria,V070909XV1100,Adriana Liset Lopez Franco,x009,X-V 11:00-13:00
-102,Fundamentos de fisica,IL34019XV1300,Diego Fernando Mulato Gomez,x019,X-V 13:00-15:00
-103,Fundamentos de fisica,IL34011LX1100,Liliana Vazquez Mercado,x011,L-X 11:00-13:00
-104,mecanica,IL34310MJ1300,Liliana Vazquez Mercado,x010,M-J 13:00-15:00
-105,mecanica,IL34301XV1100,Susana Munoz Villegas,x011,X-V 11:00-13:00
-106,Fisica cuantica,V073604LX1500,Susana Munoz Villegas,x004,L-X 15:00-17:00
-107,Fisica cuantica,V073612XV1500,Diego Fernando Mulato Gomez,x012,X-V 15:00-17:00
-108,Modelado cuantico,V073806XV1100,Diego Fernando Mulato Gomez,x006,X-V 11:00-13:00
-109,Modelado cuantico,V073807MJ1300,Susana Munoz Villegas,x007,M-J 13:00-15:00
-110,Mineria de datos,CU20713LX1300,Alma Gloria Vazquez Mares,x008,L-X 13:00-15:00
-111,Mineria de datos,CU20714LX0900,Carlos Alberto Guzman Montes,x013,L-X 09:00-11:00
-112,Computacion en frontera,V075007LX1500,Alma Gloria Vazquez Mares,x002,L-X 15:00-17:00
-113,Computacion en frontera,V075019XV1300,Luis Antonio Medellin Serna,x012,X-V 13:00-15:00
-114,Analisis forense digital,V074102XV0900,Luis Antonio Medellin Serna,x002,X-V 09:00-11:00
-115,Analisis forense digital,V074106XV1100,Ana Jazmin Guerrero Campos,x016,X-V 11:00-13:00
-116,Seguridad defensiva y gestion,V074001MJ1300,Emmanuel Franco Lopez Velarde,x001,M-J 13:00-15:00
-117,Seguridad defensiva y gestion,V074014XV0900,Ana Jazmin Guerrero Campos,x014,X-V 09:00-11:00
-118,Seguridad en redes,V073902MJ0900,Carlos Alberto Guzman Montes,x002,M-J 09:00-11:00
-119,Seguridad en redes,V073914XV1100,Luis Antonio Medellin Serna,x012,X-V 11:00-13:00
+0,Fundamentos de programacion,I528803XV1300,Zoila Liliana Herrera Lucan,x011,X-V 13:00-15:00
+1,Fundamentos de programacion,I528818LX1100,Beatriz Adriana Rivera Aguilar,x018,L-X 11:00-13:00
+2,Programacion estructurada,IL35205LX1500,Luis Felipe Mariscal Lugo,x018,L-X 15:00-17:00
+3,Programacion estructurada,IL35210XV1500,Adriana Pena Perez,x009,X-V 15:00-17:00
+4,Programacion orientada a objetos,I528905MJ1100,Beatriz Adriana Rivera Aguilar,x010,M-J 11:00-13:00
+5,Programacion orientada a objetos,I528905XV1300,Carolina Elizabeth Gomez Marquez,x014,X-V 13:00-15:00
+6,Estructura de datos,IL35417XV1300,Ramiro Lupercio Coronel,x016,X-V 13:00-15:00
+7,Estructura de datos,IL35409MJ0900,Beatriz Adriana Rivera Aguilar,x015,M-J 09:00-11:00
+8,Programacion para internet,IL36217MJ1300,Jose Ruben Maldonado Mercado,x015,M-J 13:00-15:00
+9,Programacion para internet,IL36214MJ1100,Veronica Camacho Santillan,x005,M-J 11:00-13:00
+10,Analisis de algoritmos,IL35515XV0900,Leopoldo Morales Gonzalez,x012,X-V 09:00-11:00
+11,Analisis de algoritmos,IL35514MJ0900,Oscar Eduardo Maciel Castillo,x006,M-J 09:00-11:00
+12,Bases de datos,IL35604LX0900,Eduardo Rangel Heras,x001,L-X 09:00-11:00
+13,Bases de datos,IL35604XV1500,Zoila Liliana Herrera Lucan,x001,X-V 15:00-17:00
+14,Redes de computadoras,IL36404MJ1500,Adriana Pena Perez,x017,M-J 15:00-17:00
+15,Redes de computadoras,IL36413MJ1300,Adriana Pena Perez,x010,M-J 13:00-15:00
+16,Sistemas operativos,IL36619LX0900,Luis Felipe Mariscal Lugo,x012,L-X 09:00-11:00
+17,Sistemas operativos,IL36607LX1500,Sanchez Santoyo Alejandra,x001,L-X 15:00-17:00
+18,Interaccion Humano Computadora,IL36716LX1300,Alfredo Gutierrez,x009,L-X 13:00-15:00
+19,Interaccion Humano Computadora,IL36720LX1500,Alfredo Gutierrez,x015,L-X 15:00-17:00
+20,Ingenieria de Software,CB22418MJ1300,Martha Del Carmen Gutierrez Salmeron,x013,M-J 13:00-15:00
+21,Ingenieria de Software,CB22401LX1300,Sanchez Santoyo Alejandra,x006,L-X 13:00-15:00
+22,Programacion de Bajo Nivel,IL35819MJ0900,Jose Ruben Maldonado Mercado,x020,M-J 09:00-11:00
+23,Programacion de Bajo Nivel,IL35816LX0900,Veronica Camacho Santillan,x008,L-X 09:00-11:00
+24,Teoria de la computacion,IL35718XV1500,Carolina Elizabeth Gomez Marquez,x010,X-V 15:00-17:00
+25,Teoria de la computacion,IL35707LX1100,Jose Ruben Maldonado Mercado,x017,L-X 11:00-13:00
+26,Laboratorio Abierto: Disenio,IL37219MJ1300,Zoila Liliana Herrera Lucan,x016,M-J 13:00-15:00
+27,Laboratorio Abierto: Disenio,IL37206LX1300,Zoila Liliana Herrera Lucan,x010,L-X 13:00-15:00
+28,Laboratorio Abierto: Construccion,IL37302MJ1500,Noe Ortega Sanchez,x011,M-J 15:00-17:00
+29,Laboratorio Abierto: Construccion,IL37313LX1500,Oscar Eduardo Maciel Castillo,x006,L-X 15:00-17:00
+30,Laboratorio Abierto: Prueba,IL37402XV1100,Adriana Pena Perez,x010,X-V 11:00-13:00
+31,Laboratorio Abierto: Prueba,IL37420MJ1100,Arturo Valdivia Gonzalez,x017,M-J 11:00-13:00
+32,Compiladores,IL35918MJ1500,Carolina Elizabeth Gomez Marquez,x012,M-J 15:00-17:00
+33,Compiladores,IL35916MJ1100,Oscar Eduardo Maciel Castillo,x006,M-J 11:00-13:00
+34,Programacion paralela y concurrente,IL36003MJ1500,Erasmo Antonio Rodriguez,x009,M-J 15:00-17:00
+35,Programacion paralela y concurrente,IL36014MJ1300,Beatriz Adriana Rivera Aguilar,x011,M-J 13:00-15:00
+36,Seguridad de la informacion,IL36801LX0900,Erasmo Antonio Rodriguez,x006,L-X 09:00-11:00
+37,Seguridad de la informacion,IL36804LX1300,Beatriz Adriana Rivera Aguilar,x014,L-X 13:00-15:00
+38,Informatica administrativa,V073014LX1500,Angel Tonatiuh Hernandez Casas,x005,L-X 15:00-17:00
+39,Informatica administrativa,V073008MJ1100,Alfredo Gutierrez,x009,M-J 11:00-13:00
+40,Calidad de software,V073211MJ1500,Leopoldo Morales Gonzalez,x002,M-J 15:00-17:00
+41,Calidad de software,V073201MJ0900,Veronica Camacho Santillan,x013,M-J 09:00-11:00
+42,Administracion de bases de datos,V072419LX1100,Sabrina Lizbeth Vega Maldonado,x020,L-X 11:00-13:00
+43,Administracion de bases de datos,V072415LX0900,Jose Ruben Maldonado Mercado,x002,L-X 09:00-11:00
+44,Computacion cuantica ,V073704XV1300,Adriana Pena Perez,x003,X-V 13:00-15:00
+45,Computacion cuantica ,V073707LX0900,Ramiro Lupercio Coronel,x020,L-X 09:00-11:00
+46,Internet de las cosas,V074809MJ1100,Carlos Dario Arenas Yerena,x019,M-J 11:00-13:00
+47,Internet de las cosas,V074812MJ1100,Eduardo Rangel Heras,x002,M-J 11:00-13:00
+48,Desarrollo de paginas web en la nube y moviles,V074915MJ1500,Sanchez Santoyo Alejandra,x008,M-J 15:00-17:00
+49,Desarrollo de paginas web en la nube y moviles,V074920MJ0900,Oscar Eduardo Maciel Castillo,x003,M-J 09:00-11:00
+50,Fundamentos de IA,IL36114MJ1300,Jorge De Jesus Galvez Rodriguez,x003,M-J 13:00-15:00
+51,Fundamentos de IA,IL36108LX0900,Jorge Daniel Rios Arrañaga,x005,L-X 09:00-11:00
+52,Algoritmos metaheuristicos,V072609LX0900,Miguel Angel Alejandro Islas Toski,x010,L-X 09:00-11:00
+53,Algoritmos metaheuristicos,V072603LX1300,Jorge Daniel Rios Arrañaga,x011,L-X 13:00-15:00
+54,Sistemas Inteligentes,V073409MJ1500,Carlos Alberto Villaseñor Padilla,x019,M-J 15:00-17:00
+55,Sistemas Inteligentes,V073408MJ0900,Carlos Alberto Villaseñor Padilla,x004,M-J 09:00-11:00
+56,Tecnologias de Inteligencia Artificial,V072806MJ0900,Miguel Angel Alejandro Islas Toski,x019,M-J 09:00-11:00
+57,Tecnologias de Inteligencia Artificial,V072813LX1300,Miguel Angel Alejandro Islas Toski,x020,L-X 13:00-15:00
+58,Circuitos Electronicos y electromagnetismo,IL34613XV0900,Sergio Ramon Itsuo Higashi Minami,x009,X-V 09:00-11:00
+59,Circuitos Electronicos y electromagnetismo,IL34615MJ1100,Sergio Ramon Itsuo Higashi Minami,x011,M-J 11:00-13:00
+60,Sistemas digitales,IL36307LX1300,Agustin Santiago Medina Vazquez,x019,L-X 13:00-15:00
+61,Sistemas digitales,IL36305LX1100,Agustin Santiago Medina Vazquez,x015,L-X 11:00-13:00
+62,Arquitectura de computadoras,IL36516MJ1300,Rodrigo Antonio Campos Villarreal,x001,M-J 13:00-15:00
+63,Arquitectura de computadoras,IL36519XV1300,Sergio Ramon Itsuo Higashi Minami,x009,X-V 13:00-15:00
+64,Logica matematica,I524706XV1300,Miriam Ileana Flores Sandoval,x004,X-V 13:00-15:00
+65,Logica matematica,I524718LX1100,Jorge Luis Rodriguez Gutierrez,x004,L-X 11:00-13:00
+66,Precalculo,IG73808LX1100,Miriam Ileana Flores Sandoval,x003,L-X 11:00-13:00
+67,Precalculo,IG73805LX1300,Miriam Ileana Flores Sandoval,x016,L-X 13:00-15:00
+68,Matematicas discretas,IL34516XV1100,Miriam Ileana Flores Sandoval,x001,X-V 11:00-13:00
+69,Matematicas discretas,IL34512LX0900,Miriam Ileana Flores Sandoval,x017,L-X 09:00-11:00
+70,Calculo diferencial e integral,IL34416XV1500,Miriam Ileana Flores Sandoval,x017,X-V 15:00-17:00
+71,Calculo diferencial e integral,IL34410MJ1500,Jorge Luis Rodriguez Gutierrez,x003,M-J 15:00-17:00
+72,Algebra lineal,IB05608MJ1300,Jose Luis Netzahualcoyotl,x017,M-J 13:00-15:00
+73,Algebra lineal,IB05603XV1100,Jose Luis Netzahualcoyotl,x003,X-V 11:00-13:00
+74,Ecuaciones diferenciales,IL34708MJ1500,Jose Luis Netzahualcoyotl,x015,M-J 15:00-17:00
+75,Ecuaciones diferenciales,IL34703LX1100,Jose Solis Rodriguez,x014,L-X 11:00-13:00
+76,Probabilidad y estadistica,IB06706MJ1100,Sara Edith Villalobos Jimenez,x001,M-J 11:00-13:00
+77,Probabilidad y estadistica,IB06717LX0900,Norma Elva Espino Rojas,x007,L-X 09:00-11:00
+78,Metodos numericos,IL34803XV1500,Jose Luis Netzahualcoyotl,x013,X-V 15:00-17:00
+79,Metodos numericos,IL34819MJ0900,Sara Edith Villalobos Jimenez,x011,M-J 09:00-11:00
+80,Introduccion a la ingenieria,IL34215XV1100,Adriana Liset Lopez Franco,x017,X-V 11:00-13:00
+81,Introduccion a la ingenieria,IL34202MJ1300,Adriana Liset Lopez Franco,x020,M-J 13:00-15:00
+82,Administracionn de proyectos tecnologicos,IL35313LX1100,Jesus Alvarez Arellano,x002,L-X 11:00-13:00
+83,Administracionn de proyectos tecnologicos,IL35319MJ1100,Hector Alejandro Galvez Lopez,x007,M-J 11:00-13:00
+84,Liderazgo y emprendimiento,IL35020XV1500,Hector Alejandro Galvez Lopez,x014,X-V 15:00-17:00
+85,Liderazgo y emprendimiento,IL35015MJ1300,Dulce Angelica Valdivia Chavez,x002,M-J 13:00-15:00
+86,Innovacion y tecnologia,IL35108LX1500,Roman Torres Aceves,x020,L-X 15:00-17:00
+87,Innovacion y tecnologia,IL35116XV0900,Adriana Liset Lopez Franco,x001,X-V 09:00-11:00
+88,Seminario de Integracion Protocolo,IL36911MJ0900,Roman Torres Aceves,x018,M-J 09:00-11:00
+89,Seminario de Integracion Protocolo,IL36904LX1500,Jesus Alvarez Arellano,x002,L-X 15:00-17:00
+90,Seminario de Integracion Desarrollo,IL37005XV1500,Adriana Liset Lopez Franco,x008,X-V 15:00-17:00
+91,Seminario de Integracion Desarrollo,IL37016MJ1100,Ruben Adrian Gil Rivera,x018,M-J 11:00-13:00
+92,Seminario de Integracion Comunicacion,IL37120LX1100,Hector Alejandro Galvez Lopez,x012,L-X 11:00-13:00
+93,Seminario de Integracion Comunicacion,IL37110MJ1100,Adriana Liset Lopez Franco,x015,M-J 11:00-13:00
+94,Ingenieria y sustentabilidad ,V071707MJ1100,Dulce Angelica Valdivia Chavez,x020,M-J 11:00-13:00
+95,Ingenieria y sustentabilidad ,V071705MJ0900,Rocio Del Carmen Morgan Franco,x016,M-J 09:00-11:00
+96,Innovacion tecnologica y emprendimiento,V071910LX1300,Roman Torres Aceves,x005,L-X 13:00-15:00
+97,Innovacion tecnologica y emprendimiento,V071905XV1300,Adriana Liset Lopez Franco,x018,X-V 13:00-15:00
+98,Control de Proyectos,V072703XV1500,Roman Torres Aceves,x011,X-V 15:00-17:00
+99,Control de Proyectos,V072707MJ0900,Jose Luis Guerrero Contreras,x002,M-J 09:00-11:00
+100,Induccion a la ingenieria,V070903MJ1300,Adriana Liset Lopez Franco,x007,M-J 13:00-15:00
+101,Induccion a la ingenieria,V070916LX1500,Rocio Del Carmen Morgan Franco,x014,L-X 15:00-17:00
+102,Fundamentos de fisica,IL34018MJ1300,Susana Munoz Villegas,x006,M-J 13:00-15:00
+103,Fundamentos de fisica,IL34013LX0900,Susana Munoz Villegas,x004,L-X 09:00-11:00
+104,mecanica,IL34301XV1500,Diego Fernando Mulato Gomez,x012,X-V 15:00-17:00
+105,mecanica,IL34313XV1300,Susana Munoz Villegas,x008,X-V 13:00-15:00
+106,Fisica cuantica,V073608LX1300,Liliana Vazquez Mercado,x017,L-X 13:00-15:00
+107,Fisica cuantica,V073618XV1300,Diego Fernando Mulato Gomez,x020,X-V 13:00-15:00
+108,Modelado cuantico,V073817LX1500,Liliana Vazquez Mercado,x009,L-X 15:00-17:00
+109,Modelado cuantico,V073802MJ1300,Liliana Vazquez Mercado,x018,M-J 13:00-15:00
+110,Mineria de datos,CU20719MJ1300,Emmanuel Franco Lopez Velarde,x014,M-J 13:00-15:00
+111,Mineria de datos,CU20707XV1500,Luis Antonio Medellin Serna,x003,X-V 15:00-17:00
+112,Computacion en frontera,V075009MJ1100,Luis Antonio Medellin Serna,x008,M-J 11:00-13:00
+113,Computacion en frontera,V075004XV0900,Luis Antonio Medellin Serna,x007,X-V 09:00-11:00
+114,Analisis forense digital,V074103MJ0900,Luis Antonio Medellin Serna,x014,M-J 09:00-11:00
+115,Analisis forense digital,V074102LX1100,Carlos Alberto Guzman Montes,x019,L-X 11:00-13:00
+116,Seguridad defensiva y gestion,V074010LX1500,Alma Gloria Vazquez Mares,x003,L-X 15:00-17:00
+117,Seguridad defensiva y gestion,V074011LX1300,Carlos Alberto Guzman Montes,x002,L-X 13:00-15:00
+118,Seguridad en redes,V073910XV1100,Ana Jazmin Guerrero Campos,x018,X-V 11:00-13:00
+119,Seguridad en redes,V073906MJ0900,Ana Jazmin Guerrero Campos,x012,M-J 09:00-11:00
